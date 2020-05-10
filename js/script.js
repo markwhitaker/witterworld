@@ -37,7 +37,7 @@ $(function () {
     function getCountryColours() {
         var colours = {};
         for (let region in map.regions) {
-            colours[region] = films[region] ? "#00B3DB" : "#777777";
+            colours[region] = films[region] ? "#00B3DB" : "#555555";
         }
         return colours;
     }

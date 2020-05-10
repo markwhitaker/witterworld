@@ -3,18 +3,28 @@ body, .modal-content {
     color: #ffffff;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: underline;
-}
-a:hover {
-    color: #ffffffcc;
-}
-
 #mapContainer {
     background-color: #202020;
 }
 
 #map {
     height: 600px;
+}
+
+.iconContainer,
+.iconContainer:hover,
+.iconContainer:active,
+.iconContainer:visited {
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #202020;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+}
+.iconContainer:hover {
+    background-color: #505050;
+}
+.iconContainer .icon {
+    width: 25px;
 }
