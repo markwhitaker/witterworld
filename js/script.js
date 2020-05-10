@@ -37,6 +37,10 @@ $(function () {
             .prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/")
             .toggle(getImdbSlug(film) != "");
 
+        $('#letterboxdLink')
+            .prop("href", "https://letterboxd.com/film/" + getLetterboxdSlug(film) + "/")
+            .toggle(getLetterboxdSlug(film) != "");
+
         $('#wikipediaLink')
             .prop("href", "https://en.wikipedia.org/wiki/" + getWikipediaSlug(film))
             .toggle(getWikipediaSlug(film) != "");
@@ -48,6 +52,10 @@ $(function () {
 
     function getImdbSlug(film) {
         return (film && film.imdb) ? film.imdb : "";
+    }
+
+    function getLetterboxdSlug(film) {
+        return (film && film.letterboxd) ? film.letterboxd : "";
     }
 
     function getWikipediaSlug(film) {
