@@ -1,6 +1,6 @@
 [
   {
-    "code": "CH",
+    "countryCode": "CH",
     "title": "Winter Nomads",
     "originalTitle": "Hiver Nomade",
     "imdb": "tt2215113",
@@ -10,7 +10,7 @@
     "year": 2012
   },
   {
-    "code": "IS",
+    "countryCode": "IS",
     "title": "101 Reykjavík",
     "originalTitle": null,
     "imdb": "tt0237993",
@@ -20,7 +20,7 @@
     "year": 2000
   },
   {
-    "code": "RO",
+    "countryCode": "RO",
     "title": "The Way I Spent The End Of The World",
     "originalTitle": "Cum mi-am petrecut sfârșitul lumii",
     "imdb": "tt0799991",
@@ -30,7 +30,7 @@
     "year": 2006
   },
   {
-    "code": "IT",
+    "countryCode": "IT",
     "title": "The Consequences of Love",
     "originalTitle": "Le conseguenze dell'amore",
     "imdb": "tt0398883",
@@ -40,7 +40,7 @@
     "year": 2004
   },
   {
-    "code": "PL",
+    "countryCode": "PL",
     "title": "You Are God",
     "originalTitle": "Jesteś Bogiem",
     "imdb": "tt2209386",
@@ -50,7 +50,7 @@
     "year": 2012
   },
   {
-    "code": "IQ",
+    "countryCode": "IQ",
     "title": "Son Of Babylon",
     "originalTitle": "ابن بابل",
     "imdb": "tt1415290",
@@ -60,7 +60,7 @@
     "year": 2009
   },
   {
-    "code": "MT",
+    "countryCode": "MT",
     "title": "Simshar",
     "originalTitle": null,
     "imdb": "tt2521700",

@@ -6,6 +6,11 @@ $(function () {
     var map = new jvm.Map({
         map: "world_merc",
         container: $("#map"),
+        series: {
+            regions: [{
+                attribute: "fill"
+            }]
+        },
         onRegionClick: function (_, countryCode) {
             var film = getFilmDetails(countryCode);
             console.log("Clicked " + countryCode + ": " + film.title);
@@ -16,10 +21,19 @@ $(function () {
     var films = {};
 
     $.getJSON("data/films.json", function (dataArray) {
-        dataArray.forEach(element => {
-            films[element.code] = element;
+        dataArray.forEach(film => {
+            films[film.countryCode] = film;
         });
+        map.series.regions[0].setValues(getCountryColours());
     });
+
+    function getCountryColours() {
+        var colours = {};
+        for (let region in map.regions) {
+            colours[region] = films[region] ? "#00B3DB" : "#777777";
+        }
+        return colours;
+    }
 
     function getFilmDetails(countryCode) {
         var film = films[countryCode];
