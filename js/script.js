@@ -3,6 +3,16 @@
 $(function () {
     console.log("ready");
 
+    var map = new jvm.Map({
+        map: "world_merc",
+        container: $("#map"),
+        onRegionClick: function (_, countryCode) {
+            var film = getFilmDetails(countryCode);
+            console.log("Clicked " + countryCode + ": " + film.title);
+            showFilmDetails(countryCode);
+        }
+    });
+
     var films = {};
 
     $.getJSON("data/films.json", function (dataArray) {
@@ -10,15 +20,6 @@ $(function () {
             films[element.code] = element;
         });
     });
-
-    $("#map").vectorMap({
-        map: "world_merc",
-        onRegionClick: function (_, countryCode) {
-            var film = getFilmDetails(countryCode);
-            console.log("Clicked " + countryCode + ": " + film.title);
-            showFilmDetails(countryCode);
-        }
-    })
 
     function getFilmDetails(countryCode) {
         var film = films[countryCode];
@@ -30,6 +31,7 @@ $(function () {
     function showFilmDetails(countryCode) {
         var film = films[countryCode];
 
+        $("#country").text(map.getRegionName(countryCode));
         $('#filmTitle').text(film ? film.title : "");
         $('#filmOriginalTitle').text(film && film.originalTitle ? film.originalTitle : "");
 
