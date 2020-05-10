@@ -32,8 +32,29 @@ $(function () {
 
         $('#filmTitle').text(film ? film.title : "");
         $('#filmOriginalTitle').text(film && film.originalTitle ? film.originalTitle : "");
-        $('#filmIMDb').html(film && film.imdb ? "<a href=\"https://www.imdb.com/title/" + film.imdb + "/\">Go to IMDb</a>" : "");
-        $('#filmWikipedia').html(film && film.wikipedia ? "<a href=\"https://en.wikipedia.org/wiki/" + film.wikipedia + "\">Go to Wikipedia</a>" : "");
-        $('#filmTrailer').html(film && film.trailer ? "<a href=\"" + film.trailer + "\">Watch the trailer</a>" : "");
+
+        $('#imdbLink')
+            .prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/")
+            .toggle(getImdbSlug(film) != "");
+
+        $('#wikipediaLink')
+            .prop("href", "https://en.wikipedia.org/wiki/" + getWikipediaSlug(film))
+            .toggle(getWikipediaSlug(film) != "");
+
+        $('#trailerLink')
+            .prop("href", getTrailerLink(film))
+            .toggle(getTrailerLink(film) != "");
+    }
+
+    function getImdbSlug(film) {
+        return (film && film.imdb) ? film.imdb : "";
+    }
+
+    function getWikipediaSlug(film) {
+        return (film && film.wikipedia) ? film.wikipedia : "";
+    }
+
+    function getTrailerLink(film) {
+        return (film && film.trailer) ? film.trailer : "";
     }
 });
