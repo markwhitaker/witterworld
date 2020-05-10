@@ -6,7 +6,8 @@
     "imdb": "tt2215113",
     "wikipedia": null,
     "trailer": "https://www.youtube.com/watch?v=evEpSuIfiLg",
-    "letterboxd": "winter-nomads"
+    "letterboxd": "winter-nomads",
+    "year": 2012
   },
   {
     "code": "IS",
@@ -15,15 +16,47 @@
     "imdb": "tt0237993",
     "wikipedia": "101_Reykjavík",
     "trailer": "https://www.youtube.com/watch?v=_M33gosFRec",
-    "letterboxd": "101-reykjavik"
+    "letterboxd": "101-reykjavik",
+    "year": 2000
   },
   {
     "code": "RO",
-    "title": "The Way I Spent the End of the World",
+    "title": "The Way I Spent The End Of The World",
     "originalTitle": "Cum mi-am petrecut sfârșitul lumii",
     "imdb": "tt0799991",
     "wikipedia": "The_Way_I_Spent_the_End_of_the_World",
     "trailer": "https://www.youtube.com/watch?v=iLVxKkhp8l4",
-    "letterboxd": "the-way-i-spent-the-end-of-the-world"
+    "letterboxd": "the-way-i-spent-the-end-of-the-world",
+    "year": 2006
+  },
+  {
+    "code": "IT",
+    "title": "The Consequences of Love",
+    "originalTitle": "Le conseguenze dell'amore",
+    "imdb": "tt0398883",
+    "wikipedia": "The_Consequences_of_Love",
+    "trailer": "https://www.youtube.com/watch?v=uDE9J0zPd00",
+    "letterboxd": "the-consequences-of-love",
+    "year": 2004
+  },
+  {
+    "code": "PL",
+    "title": "You Are God",
+    "originalTitle": "Jesteś Bogiem",
+    "imdb": "tt2209386",
+    "wikipedia": "Jesteś_Bogiem",
+    "trailer": "https://www.youtube.com/watch?v=VscRsHmVCdE",
+    "letterboxd": "you-are-god",
+    "year": 2012
+  },
+  {
+    "code": "IQ",
+    "title": "Son Of Babylon",
+    "originalTitle": "ابن بابل",
+    "imdb": "tt1415290",
+    "wikipedia": "Son_of_Babylon",
+    "trailer": "https://www.youtube.com/watch?v=KrMB_T9e_Vg",
+    "letterboxd": "son-of-babylon",
+    "year": 2009
   }
 ]
