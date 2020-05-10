@@ -6,6 +6,13 @@ $(function () {
     var map = new jvm.Map({
         map: "world_merc",
         container: $("#map"),
+        backgroundColor: "#00000000",
+        zoomMin: 0.9,
+        focusOn: {
+            x: 0.5,
+            y: 0.5,
+            scale: 0.9
+        },
         series: {
             regions: [{
                 attribute: "fill"
@@ -45,25 +52,19 @@ $(function () {
     function showFilmDetails(countryCode) {
         var film = films[countryCode];
 
-        $("#country").text(map.getRegionName(countryCode));
+        if (!film) {
+            return;
+        }
+
+        $("#filmCountry").text(map.getRegionName(countryCode));
         $('#filmTitle').text(film ? film.title : "");
         $('#filmOriginalTitle').text(film && film.originalTitle ? film.originalTitle : "");
+        $('#imdbLink').prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/");
+        $('#letterboxdLink').prop("href", "https://letterboxd.com/film/" + getLetterboxdSlug(film) + "/");
+        $('#wikipediaLink').prop("href", "https://en.wikipedia.org/wiki/" + getWikipediaSlug(film));
+        $('#trailerLink').prop("href", getTrailerLink(film));
 
-        $('#imdbLink')
-            .prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/")
-            .toggle(getImdbSlug(film) != "");
-
-        $('#letterboxdLink')
-            .prop("href", "https://letterboxd.com/film/" + getLetterboxdSlug(film) + "/")
-            .toggle(getLetterboxdSlug(film) != "");
-
-        $('#wikipediaLink')
-            .prop("href", "https://en.wikipedia.org/wiki/" + getWikipediaSlug(film))
-            .toggle(getWikipediaSlug(film) != "");
-
-        $('#trailerLink')
-            .prop("href", getTrailerLink(film))
-            .toggle(getTrailerLink(film) != "");
+        $('#filmDetailsModal').modal()
     }
 
     function getImdbSlug(film) {

@@ -1,13 +1,20 @@
-body {
-    background-color: #f0f0f0;
+body, .modal-content {
+    background-color: #00B3DB;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+a:hover {
+    color: #ffffffcc;
+}
+
+#mapContainer {
+    background-color: #202020;
 }
 
 #map {
-    width: 100%;
     height: 600px;
-    background-color: #ffffff;
-}
-
-.label {
-    font-weight: bold;
 }
