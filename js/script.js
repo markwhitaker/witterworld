@@ -58,6 +58,7 @@ $(function () {
 
         $("#filmCountry").text(map.getRegionName(countryCode));
         $('#filmTitle').text(film ? film.title : "");
+        $('#filmImage').prop("src", film.image);
         $('#filmOriginalTitle').text(film && film.originalTitle ? film.originalTitle : "");
         $('#imdbLink').prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/");
         $('#letterboxdLink').prop("href", "https://letterboxd.com/film/" + getLetterboxdSlug(film) + "/");

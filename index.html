@@ -29,31 +29,40 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="filmCountry"></h5>
+          <h4 class="modal-title" id="filmCountry"></h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div id="filmTitle"></div>
+          <h3 id="filmTitle"></h3>
           <div id="filmOriginalTitle"></div>
-          <div>
-            <a class="btn btn-dark" id="imdbLink">
-              <img class="icon" src="images/imdb.svg" alt="View on IMDb"/>
-              IMDb
-            </a>
-            <a class="btn btn-dark" id="letterboxdLink">
-              <img class="icon" src="images/letterboxd.svg" alt="View on Letterboxd"/>
-              Letterboxd
-            </a>
-            <a class="btn btn-dark" id="wikipediaLink">
-              <img class="icon" src="images/wikipedia.svg" alt="View on Wikipedia"/>
-              Wikipedia
-            </a>
-            <a class="btn btn-dark" id="trailerLink">
-              Watch the trailer
-            </a>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img id="filmImage"/>
+              </div>
+              <div class="col-md-6">
+                <a class="btn btn-info" id="imdbLink" target="external">
+                  <img class="icon" src="images/imdb.svg" alt="View on IMDb"/>
+                  IMDb
+                </a>
+                <a class="btn btn-info" id="letterboxdLink" target="external">
+                  <img class="icon" src="images/letterboxd.svg" alt="View on Letterboxd"/>
+                  Letterboxd
+                </a>
+                <a class="btn btn-info" id="wikipediaLink" target="external">
+                  <img class="icon" src="images/wikipedia.svg" alt="View on Wikipedia"/>
+                  Wikipedia
+                </a>
+                <a class="btn btn-info" id="trailerLink" target="external">
+                  Watch the trailer
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
         <!-- <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
