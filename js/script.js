@@ -39,6 +39,8 @@ $(function () {
         map.series.regions[0].setValues(getCountryColours());
     });
 
+    $("a").prop("target", "external");
+
     function getCountryColours() {
         var colours = {};
         for (let region in map.regions) {
@@ -62,20 +64,20 @@ $(function () {
         }
 
         $("#filmCountry").text(map.getRegionName(countryCode));
-        $('#filmTitle').text(film.title);
+        $("#filmTitle").text(film.title);
 
         if (film.image) {
             $("#filmImageContainer").removeClass("defaultImage");
-            $('#filmImage')
+            $("#filmImage")
                 .prop("src", film.image)
                 .show();
         } else {
             $("#filmImageContainer").addClass("defaultImage");
-            $('#filmImage').hide();
+            $("#filmImage").hide();
         }
 
         if (film.originalTitle) {
-            $('#filmOriginalTitle')
+            $("#filmOriginalTitle")
                 .text(film.originalTitle)
                 .show();
         } else {
@@ -84,41 +86,41 @@ $(function () {
         }
 
         if (film.imdb) {
-            $('#imdbLink')
+            $("#imdbLink")
                 .prop("href", "https://www.imdb.com/title/" + film.imdb + "/")
                 .show();
         } else {
-            $('#imdbLink')
+            $("#imdbLink")
                 .hide();
         }
 
         if (film.letterboxd) {
-            $('#letterboxdLink')
+            $("#letterboxdLink")
                 .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
                 .show();
         } else {
-            $('#letterboxdLink')
+            $("#letterboxdLink")
                 .hide()
         }
 
         if (film.wikipedia) {
-            $('#wikipediaLink')
+            $("#wikipediaLink")
                 .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
                 .show();
         } else {
-            $('#wikipediaLink')
+            $("#wikipediaLink")
                 .hide();
         }
 
         if (film.trailer) {
-            $('#trailerLink')
+            $("#trailerLink")
                 .prop("href", film.trailer)
                 .show();
         } else {
-            $('#trailerLink')
+            $("#trailerLink")
                 .hide();
         }
 
-        $('#filmDetailsModal').modal()
+        $("#filmDetailsModal").modal()
     }
 });

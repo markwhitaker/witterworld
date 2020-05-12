@@ -19,9 +19,43 @@
     padding-bottom: 30px;
 }
 
-.masthead h1 {
+.masthead h1,
+#suggestFilm h5 {
     font-weight: 900;
     text-transform: uppercase;
+}
+
+.content a {
+    color: #000000;
+    text-decoration: underline;
+}
+.content a:hover {
+    color: #00A3C7;
+}
+
+#suggestFilm {
+    background-color: #C2F4FF;
+    border-radius: 10px;
+}
+
+#suggestFilm h5 {
+    font-size: 20pt;
+    background-color: #00A3C7;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+
+#suggestFilm div {
+    padding: 10px;
+}
+
+#description {
+    margin-bottom: 10px;
+}
+#description p {
+    margin-bottom: 10px;
 }
 
 #filmImageContainer {
@@ -65,6 +99,20 @@
     margin: 10px 5px 0 0;
 }
 
+.modal-header {
+    background-color: #00A3C7;
+    color: #ffffff;
+}
 .modal-body {
     padding-bottom: 30px;
+}
+
+#footer {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 10pt;
+}
+
+#footer p {
+    margin-bottom: 0;
 }

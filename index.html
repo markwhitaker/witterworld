@@ -7,7 +7,7 @@
   <meta name="description" content="The Wittertainment World Map of Cinema">
   <meta name="author" content="Mark Whitaker">
 
-  <title>The Wittertainment World Map of Cinema</title>
+  <title>WITTERWORLD | The Wittertainment World Map of Cinema</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400&family=Raleway:wght@400;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -16,14 +16,46 @@
 </head>
 
 <body>
-  <div class="container masthead">
-    <h1>witterworld</h1>
-    <h4>The Wittertainment World Map of Cinema</h4>
+  <div class="container content">
+
+    <div class="row masthead">
+      <div class="col-md-12">
+        <h1>witterworld</h1>
+        <h4>The Wittertainment World Map of Cinema</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7" id="description">
+        <p>One film for every country in the world, compiled by Wittertainees during 2020, what with one thing and another.</p>
+        <p>Made by Mark Whitaker.</p>
+        <p><a href="https://letterboxd.com/markwhitaker/list/witterworld/">View the list on Letterboxd</a>.</p>
+        <p><a href="https://www.imdb.com/list/ls098027623/">View the list on IMDb</a>.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="suggestFilm">
+          <h5>Spot a gap?</h5>
+          <div>Suggest it to the good doctors via <a href="mailto:mayo@bbc.co.uk">email</a>, <a href="https://www.facebook.com/KermodeMayo">Facebook</a> or <a href="https://twitter.com/wittertainment">Twitter</a>.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Map -->
   <div class="container-fluid" id="mapContainer">
     <div id="map"></div>
+  </div>
+
+  <div class="container content">
+    <div class="row" id="footer">
+      <div class="col-md-12">
+        <p>&copy; 2020 Mark Whitaker.</p>
+        <p>Made with <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://jvectormap.com/">jVectorMap</a> and <a href="https://jquery.com/">jQuery</a>.</p>
+        <p>Hosted on <a href="https://www.netlify.com/">Netlify</a>.</p>
+        <p>Open sourced on <a href="https://github.com/markwhitaker/witterworld">GitHub</a>.</p>
+        <p>Hello to Jeremy Irons.</p>
+      </div>
+    </div>
   </div>
 
   <!-- Modal dialog -->
@@ -51,21 +83,21 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <a class="btn btn-dark" id="imdbLink" target="external">
-                  <img class="icon" src="images/imdb.svg" alt="View on IMDb"/>
-                  IMDb
+                <a class="btn btn-dark" id="trailerLink">
+                  <img class="icon" src="images/trailer.svg" alt="Watch the trailer"/>
+                  Watch the trailer
                 </a>
-                <a class="btn btn-dark" id="letterboxdLink" target="external">
+                <a class="btn btn-dark" id="letterboxdLink">
                   <img class="icon" src="images/letterboxd.svg" alt="View on Letterboxd"/>
                   Letterboxd
                 </a>
-                <a class="btn btn-dark" id="wikipediaLink" target="external">
+                <a class="btn btn-dark" id="imdbLink">
+                  <img class="icon" src="images/imdb.svg" alt="View on IMDb"/>
+                  IMDb
+                </a>
+                <a class="btn btn-dark" id="wikipediaLink">
                   <img class="icon" src="images/wikipedia.svg" alt="View on Wikipedia"/>
                   Wikipedia
-                </a>
-                <a class="btn btn-dark" id="trailerLink" target="external">
-                  <img class="icon" src="images/trailer.svg" alt="Watch the trailer"/>
-                  Watch the trailer
                 </a>
               </div>
             </div>
