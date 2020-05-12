@@ -11,7 +11,13 @@
 }
 
 .icon {
-    width: 20px;
+    width: 30px;
+}
+
+#filmImage.defaultImage {
+    width: 200px;
+    height: 250px;
+    background-image: url(/images/default_image.svg);
 }
 
 #filmTitleContainer {

@@ -1,7 +1,14 @@
 "use strict";
 
 $(function () {
-    console.log("ready");
+    const inactiveMapColour = "#555555";
+    const activeMapColours = [
+        "#00C4F0",
+        "#00BCE6",
+        "#00B3DB",
+        "#00ABD1",
+        "#00A3C7"
+    ];
 
     var map = new jvm.Map({
         map: "world_merc",
@@ -19,8 +26,6 @@ $(function () {
             }]
         },
         onRegionClick: function (_, countryCode) {
-            var film = getFilmDetails(countryCode);
-            console.log("Clicked " + countryCode + ": " + film.title);
             showFilmDetails(countryCode);
         }
     });
@@ -37,16 +42,16 @@ $(function () {
     function getCountryColours() {
         var colours = {};
         for (let region in map.regions) {
-            colours[region] = films[region] ? "#00B3DB" : "#555555";
+            colours[region] = films[region]
+                ? getRandomActiveMapColour()
+                : inactiveMapColour;
         }
         return colours;
     }
 
-    function getFilmDetails(countryCode) {
-        var film = films[countryCode];
-        return (film ? film : {
-            title: "No title available"
-        });
+    function getRandomActiveMapColour() {
+        let index = Math.floor(Math.random() * activeMapColours.length);
+        return activeMapColours[index];
     }
 
     function showFilmDetails(countryCode) {
@@ -60,9 +65,13 @@ $(function () {
         $('#filmTitle').text(film.title);
 
         if (film.image) {
-            $('#filmImage').prop("src", film.image);
+            $('#filmImage')
+                .prop("src", film.image)
+                .removeClass("defaultImage");
         } else {
-            // TODO
+            $('#filmImage')
+                .removeProp("src")
+                .addClass("defaultImage");
         }
 
         if (film.originalTitle) {
