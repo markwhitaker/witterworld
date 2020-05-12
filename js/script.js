@@ -32,10 +32,11 @@ $(function () {
 
     var films = {};
 
-    $.getJSON("data/films.json", function (dataArray) {
-        dataArray.forEach(film => {
+    $.getJSON("data/films.json", function (filmArray) {
+        for (let i = 0; i < filmArray.length; i++) {
+            let film = filmArray[i];
             films[film.countryCode] = film;
-        });
+        }
         map.series.regions[0].setValues(getCountryColours());
     });
 
