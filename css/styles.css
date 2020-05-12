@@ -30,17 +30,17 @@
     text-decoration: underline;
 }
 .content a:hover {
-    color: #00A3C7;
+    color: #009ABD;
 }
 
 #suggestFilm {
-    background-color: #C2F4FF;
+    background-color: #CCF6FF;
     border-radius: 10px;
 }
 
 #suggestFilm h5 {
     font-size: 20pt;
-    background-color: #00A3C7;
+    background-color: #009ABD;
     color: #ffffff;
     padding: 10px;
     border-radius: 10px 10px 0 0;
@@ -100,7 +100,7 @@
 }
 
 .modal-header {
-    background-color: #00A3C7;
+    background-color: #009ABD;
     color: #ffffff;
 }
 .modal-body {

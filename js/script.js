@@ -3,11 +3,11 @@
 $(function () {
     const inactiveMapColour = "#555555";
     const activeMapColours = [
-        "#00C4F0",
-        "#00BCE6",
+        "#00CCFA",
+        "#00C0EB",
         "#00B3DB",
-        "#00ABD1",
-        "#00A3C7"
+        "#00A7CC",
+        "#009ABD"
     ];
 
     var map = new jvm.Map({
