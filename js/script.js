@@ -65,13 +65,13 @@ $(function () {
         $('#filmTitle').text(film.title);
 
         if (film.image) {
+            $("#filmImageContainer").removeClass("defaultImage");
             $('#filmImage')
                 .prop("src", film.image)
-                .removeClass("defaultImage");
+                .show();
         } else {
-            $('#filmImage')
-                .removeProp("src")
-                .addClass("defaultImage");
+            $("#filmImageContainer").addClass("defaultImage");
+            $('#filmImage').hide();
         }
 
         if (film.originalTitle) {
