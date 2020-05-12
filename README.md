@@ -2,4 +2,4 @@
 
 # WITTERWORLD
 
-Source for the Wittertainment World Map of Cinema, online at [witterworld.com](https://www.witterworld.com).
+Source for the Wittertainment World Map of Cinema, online at [witterworld.com](https://witterworld.com).
