@@ -57,30 +57,59 @@ $(function () {
         }
 
         $("#filmCountry").text(map.getRegionName(countryCode));
-        $('#filmTitle').text(film ? film.title : "");
-        $('#filmImage').prop("src", film.image);
-        $('#filmOriginalTitle').text(film && film.originalTitle ? film.originalTitle : "");
-        $('#imdbLink').prop("href", "https://www.imdb.com/title/" + getImdbSlug(film) + "/");
-        $('#letterboxdLink').prop("href", "https://letterboxd.com/film/" + getLetterboxdSlug(film) + "/");
-        $('#wikipediaLink').prop("href", "https://en.wikipedia.org/wiki/" + getWikipediaSlug(film));
-        $('#trailerLink').prop("href", getTrailerLink(film));
+        $('#filmTitle').text(film.title);
+
+        if (film.image) {
+            $('#filmImage').prop("src", film.image);
+        } else {
+            // TODO
+        }
+
+        if (film.originalTitle) {
+            $('#filmOriginalTitle')
+                .text(film.originalTitle)
+                .show();
+        } else {
+            $("#filmOriginalTitle")
+                .hide();
+        }
+
+        if (film.imdb) {
+            $('#imdbLink')
+                .prop("href", "https://www.imdb.com/title/" + film.imdb + "/")
+                .show();
+        } else {
+            $('#imdbLink')
+                .hide();
+        }
+
+        if (film.letterboxd) {
+            $('#letterboxdLink')
+                .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
+                .show();
+        } else {
+            $('#letterboxdLink')
+                .hide()
+        }
+
+        if (film.wikipedia) {
+            $('#wikipediaLink')
+                .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
+                .show();
+        } else {
+            $('#wikipediaLink')
+                .hide();
+        }
+
+        if (film.trailer) {
+            $('#trailerLink')
+                .prop("href", film.trailer)
+                .show();
+        } else {
+            $('#trailerLink')
+                .hide();
+        }
 
         $('#filmDetailsModal').modal()
-    }
-
-    function getImdbSlug(film) {
-        return (film && film.imdb) ? film.imdb : "";
-    }
-
-    function getLetterboxdSlug(film) {
-        return (film && film.letterboxd) ? film.letterboxd : "";
-    }
-
-    function getWikipediaSlug(film) {
-        return (film && film.wikipedia) ? film.wikipedia : "";
-    }
-
-    function getTrailerLink(film) {
-        return (film && film.trailer) ? film.trailer : "";
     }
 });
