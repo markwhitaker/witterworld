@@ -1,5 +1,5 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
 #mapContainer {
@@ -14,10 +14,18 @@
     width: 30px;
 }
 
+.masthead {
+    padding: 50px 0 30px 0;
+}
+
+.masthead h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
 #filmImageContainer {
-    border: 5px solid #e0e0e0;
+    border: 8px solid #f0f0f0;
     border-radius: 5px;
-    background-color: #b0b0b0;
 }
 
 #filmImageContainer.defaultImage {
@@ -34,12 +42,28 @@
     margin-bottom: 1.5em;
 }
 
+#filmTitle,
 #filmOriginalTitle {
-    font-style: italic;
+    margin-bottom: 0;
 }
 
+#filmTitle {
+    font-size: 30pt;
+    font-weight: 900;
+    line-height: 1em;
+}
+#filmOriginalTitle {
+    font-family: Markazi Text, Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: 400;
+    color: #707070;
+}
 #filmImageContainer,
 .btn {
     display: inline-block;
     margin: 10px 5px 0 0;
+}
+
+.modal-body {
+    padding-bottom: 30px;
 }
