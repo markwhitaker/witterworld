@@ -50,7 +50,7 @@ $(function () {
         populateFilmList();
     });
 
-    $("a").prop("target", "external");
+    $("a").prop("target", "_blank");
 
     $("#btnShowMap").click(function(){
         $("#btnShowMap").addClass("selected");
@@ -72,13 +72,13 @@ $(function () {
         for (let i = 0; i < filmsArraySorted.length; i++) {
             let film = filmsArraySorted[i];
             $("#list").append(
-                $("<span/>")
+                $("<span></span>")
                     .addClass("listFilm")
                     .prop("style", "background-color: " + getRandomActiveMapColour())
-                    .text(film.country))
+                    .text(film.country)
                     .click(function(){
                         showFilmDetails(film.countryCode);
-                    });
+                    }));
         }
     }
 
