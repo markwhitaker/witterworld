@@ -51,9 +51,30 @@
     </div>
   </div>
 
+  <!-- Map/list buttons -->
+  <div class="container" id="mapListButtons">
+    <button type="button" id="btnShowMap" class="selected">Map</button>
+    <button type="button" id="btnShowList">List</button>
+  </div>
+
   <!-- Map -->
   <div class="container-fluid" id="mapContainer">
     <div id="map"></div>
+  </div>
+
+  <!-- List -->
+  <div class="container-fluid" id="listContainer" style="display: none;">
+    <div class="container content">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="listIntroduction">
+            Some countries don’t appear on the map, either because they’re <a href="https://www.youtube.com/watch?v=1lfqvof8czw">not really countries</a>
+            or because they’re very small. Sorry about that. <strong>This</strong> is the full list.
+          </div>
+          <div id="list"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="container content">
@@ -87,6 +108,7 @@
           <div id="filmTitleContainer">
             <h3 id="filmTitle"></h3>
             <div id="filmOriginalTitle"></div>
+            <div id="filmYear"></div>
           </div>
 
           <div class="container-fluid">

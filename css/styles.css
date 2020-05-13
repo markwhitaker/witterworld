@@ -2,12 +2,37 @@
     font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
-#mapContainer {
+#mapContainer,
+#listContainer {
     background-color: #f0f0f0;
 }
 
 #map {
     height: 600px;
+}
+
+#list {
+    min-height: 400px;
+    padding: 10px 0;
+}
+
+#list .listFilm {
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00B3DB;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0;
+}
+#list .listFilm:hover {
+    opacity: 80%;
+}
+
+#listIntroduction {
+    font-size: 0.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .icon {
@@ -78,7 +103,8 @@
 }
 
 #filmTitle,
-#filmOriginalTitle {
+#filmOriginalTitle,
+#filmYear {
     margin-bottom: 0;
 }
 
@@ -87,11 +113,19 @@
     font-weight: 900;
     line-height: 1em;
 }
-#filmOriginalTitle {
+#filmOriginalTitle,
+#filmYear {
     font-family: Markazi Text, Arial, Helvetica, sans-serif;
-    font-size: 18pt;
     font-weight: 400;
-    color: #707070;
+    line-height: 1em;
+    margin-top: 0.25em;
+}
+#filmOriginalTitle {
+    font-size: 20pt;
+    color: #909090;
+}
+#filmYear {
+    font-size: 18pt;
 }
 #filmImageContainer,
 .btn {
@@ -100,7 +134,7 @@
 }
 
 .modal-header {
-    background-color: #009ABD;
+    background-color: #00B3DB;
     color: #ffffff;
 }
 .modal-body {
@@ -150,4 +184,18 @@
     display: inline-block;
     height: 80px;
     width: 80px;
+}
+
+#mapListButtons button {
+    border-width: 2px 2px 0 2px;
+    border-style: solid;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 20px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    border-color: #f0f0f0;
+}
+
+#mapListButtons button.selected {
+    background-color: #f0f0f0;
 }

@@ -30,17 +30,57 @@ $(function () {
         }
     });
 
+    var filmsArraySorted = [];
     var films = {};
 
-    $.getJSON("data/films.json", function (filmArray) {
-        for (let i = 0; i < filmArray.length; i++) {
-            let film = filmArray[i];
+    $.getJSON("data/films.json", function (data) {
+        filmsArraySorted = data.sort(function(a, b){
+            if (a.country < b.country) {
+                return -1;
+            } else if (a.country > b.country) {
+                return 1;
+            }
+            return 0;
+        });
+        for (let i = 0; i < filmsArraySorted.length; i++) {
+            let film = filmsArraySorted[i];
             films[film.countryCode] = film;
         }
         map.series.regions[0].setValues(getCountryColours());
+        populateFilmList();
     });
 
-    $("a").prop("target", "external");
+    $("a").prop("target", "_blank");
+
+    $("#btnShowMap").click(function(){
+        $("#btnShowMap").addClass("selected");
+        $("#mapContainer").show();
+        $("#btnShowList").removeClass("selected");
+        $("#listContainer").hide();
+    });
+
+    $("#btnShowList").click(function(){
+        $("#btnShowList").addClass("selected");
+        $("#listContainer").show();
+        $("#btnShowMap").removeClass("selected");
+        $("#mapContainer").hide();
+    });
+
+    function populateFilmList() {
+        $("#list").empty();
+
+        for (let i = 0; i < filmsArraySorted.length; i++) {
+            let film = filmsArraySorted[i];
+            $("#list").append(
+                $("<span></span>")
+                    .addClass("listFilm")
+                    .prop("style", "background-color: " + getRandomActiveMapColour())
+                    .text(film.country)
+                    .click(function(){
+                        showFilmDetails(film.countryCode);
+                    }));
+        }
+    }
 
     function getCountryColours() {
         var colours = {};
@@ -64,8 +104,9 @@ $(function () {
             return;
         }
 
-        $("#filmCountry").text(map.getRegionName(countryCode));
+        $("#filmCountry").text(film.country);
         $("#filmTitle").text(film.title);
+        $("#filmYear").text(film.year);
 
         if (film.image) {
             $("#filmImageContainer").removeClass("defaultImage");
