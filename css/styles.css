@@ -107,6 +107,29 @@
     padding-bottom: 30px;
 }
 
+.filmLink {
+    background-position: center left 10px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding: 10px 10px 10px 50px;
+}
+
+#trailerLink {
+    background-image: url(/images/trailer.svg);
+}
+
+#letterboxdLink {
+    background-image: url(/images/letterboxd.svg);
+}
+
+#imdbLink {
+    background-image: url(/images/imdb.svg);
+}
+
+#wikipediaLink {
+    background-image: url(/images/wikipedia.svg);
+}
+
 #footer {
     padding-top: 10px;
     padding-bottom: 30px;
