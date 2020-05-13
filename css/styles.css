@@ -145,6 +145,14 @@
     margin-bottom: 0;
 }
 
+#footer #icon {
+    background-image: url(/images/icon.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+}
+
 #mapListButtons button {
     border-width: 2px 2px 0 2px;
     border-style: solid;
