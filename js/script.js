@@ -42,6 +42,20 @@ $(function () {
 
     $("a").prop("target", "external");
 
+    $("#btnShowMap").click(function(){
+        $("#btnShowMap").addClass("selected");
+        $("#mapContainer").show();
+        $("#btnShowList").removeClass("selected");
+        $("#listContainer").hide();
+    });
+
+    $("#btnShowList").click(function(){
+        $("#btnShowList").addClass("selected");
+        $("#listContainer").show();
+        $("#btnShowMap").removeClass("selected");
+        $("#mapContainer").hide();
+    });
+
     function getCountryColours() {
         var colours = {};
         for (let region in map.regions) {

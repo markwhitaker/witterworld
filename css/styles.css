@@ -2,7 +2,8 @@
     font-family: Raleway, Arial, Helvetica, sans-serif;
 }
 
-#mapContainer {
+#mapContainer,
+#listContainer {
     background-color: #f0f0f0;
 }
 
@@ -142,4 +143,18 @@
 
 #footer p {
     margin-bottom: 0;
+}
+
+#mapListButtons button {
+    border-width: 2px 2px 0 2px;
+    border-style: solid;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 20px;
+    margin-right: 5px;
+    background-color: #ffffff;
+    border-color: #f0f0f0;
+}
+
+#mapListButtons button.selected {
+    background-color: #f0f0f0;
 }
