@@ -130,6 +130,10 @@
     background-image: url(/images/wikipedia.svg);
 }
 
+#justwatchLink {
+    background-image: url(/images/justwatch.svg);
+}
+
 #footer {
     padding-top: 10px;
     padding-bottom: 30px;

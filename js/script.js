@@ -113,6 +113,15 @@ $(function () {
                 .hide();
         }
 
+        if (film.justwatch) {
+            $("#justwatchLink")
+                .prop("href", "https://www.justwatch.com/uk/movie/" + film.justwatch)
+                .show();
+        } else {
+            $("#justwatchLink")
+                .hide();
+        }
+
         if (film.trailer) {
             $("#trailerLink")
                 .prop("href", film.trailer)

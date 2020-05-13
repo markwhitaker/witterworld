@@ -8,7 +8,8 @@
     "trailer": "https://www.youtube.com/watch?v=evEpSuIfiLg",
     "letterboxd": "winter-nomads",
     "year": 2012,
-    "image": "https://m.media-amazon.com/images/M/MV5BOTA4OTIzOTI5N15BMl5BanBnXkFtZTgwODMwMjEwMjE@._V1_UY268_CR9,0,182,268_AL_.jpg"
+    "image": "https://m.media-amazon.com/images/M/MV5BOTA4OTIzOTI5N15BMl5BanBnXkFtZTgwODMwMjEwMjE@._V1_UY268_CR9,0,182,268_AL_.jpg",
+    "justwatch": null
   },
   {
     "countryCode": "IS",
@@ -19,7 +20,8 @@
     "trailer": "https://www.youtube.com/watch?v=_M33gosFRec",
     "letterboxd": "101-reykjavik",
     "year": 2000,
-    "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/101reykjavik.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e9/101reykjavik.jpg",
+    "justwatch": "101-reykjavik"
   },
   {
     "countryCode": "RO",
@@ -30,7 +32,8 @@
     "trailer": "https://www.youtube.com/watch?v=iLVxKkhp8l4",
     "letterboxd": "the-way-i-spent-the-end-of-the-world",
     "year": 2006,
-    "image": "https://upload.wikimedia.org/wikipedia/en/9/93/Sfarsitul_lumii.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/93/Sfarsitul_lumii.jpg",
+    "justwatch": null
   },
   {
     "countryCode": "IT",
@@ -41,7 +44,8 @@
     "trailer": "https://www.youtube.com/watch?v=uDE9J0zPd00",
     "letterboxd": "the-consequences-of-love",
     "year": 2004,
-    "image": "https://upload.wikimedia.org/wikipedia/en/c/cc/The_Consequences_of_Love_%28poster%29.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/cc/The_Consequences_of_Love_%28poster%29.jpg",
+    "justwatch": "the-consequences-of-love"
   },
   {
     "countryCode": "PL",
@@ -52,7 +56,8 @@
     "trailer": "https://www.youtube.com/watch?v=VscRsHmVCdE",
     "letterboxd": "you-are-god",
     "year": 2012,
-    "image": "https://upload.wikimedia.org/wikipedia/en/3/30/Jeste%C5%9B_Bogiem_poster.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/30/Jeste%C5%9B_Bogiem_poster.jpg",
+    "justwatch": null
   },
   {
     "countryCode": "IQ",
@@ -63,7 +68,8 @@
     "trailer": "https://www.youtube.com/watch?v=KrMB_T9e_Vg",
     "letterboxd": "son-of-babylon",
     "year": 2009,
-    "image": "https://upload.wikimedia.org/wikipedia/en/5/5c/Son_of_Babylon.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/5c/Son_of_Babylon.jpg",
+    "justwatch": "son-of-babylon"
   },
   {
     "countryCode": "MT",
@@ -74,6 +80,7 @@
     "trailer": "https://www.youtube.com/watch?v=jnOLsCGV8XQ",
     "letterboxd": "simshar",
     "year": 2014,
-    "image": "https://upload.wikimedia.org/wikipedia/en/2/2f/Simshar_poster.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2f/Simshar_poster.jpg",
+    "justwatch": "simshar"
   }
 ]
