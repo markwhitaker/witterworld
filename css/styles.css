@@ -143,9 +143,3 @@
 #footer p {
     margin-bottom: 0;
 }
-
-.jvectormap-zoomin,
-.jvectormap-zoomout {
-    left: inherit;
-    right: 10px;
-}
