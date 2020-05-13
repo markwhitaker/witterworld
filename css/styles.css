@@ -11,6 +11,10 @@
     height: 600px;
 }
 
+#list {
+    min-height: 400px;
+}
+
 .icon {
     width: 30px;
 }
