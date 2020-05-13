@@ -16,6 +16,18 @@
     padding: 10px 0;
 }
 
+#list .listFilm {
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0;
+}
+#list .listFilm:hover {
+    opacity: 80%;
+}
+
 .icon {
     width: 30px;
 }
