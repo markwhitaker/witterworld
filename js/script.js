@@ -80,6 +80,7 @@ $(function () {
 
         $("#filmCountry").text(map.getRegionName(countryCode));
         $("#filmTitle").text(film.title);
+        $("#filmYear").text(film.year);
 
         if (film.image) {
             $("#filmImageContainer").removeClass("defaultImage");

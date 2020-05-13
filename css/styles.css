@@ -84,7 +84,8 @@
 }
 
 #filmTitle,
-#filmOriginalTitle {
+#filmOriginalTitle,
+#filmYear {
     margin-bottom: 0;
 }
 
@@ -93,11 +94,19 @@
     font-weight: 900;
     line-height: 1em;
 }
-#filmOriginalTitle {
+#filmOriginalTitle,
+#filmYear {
     font-family: Markazi Text, Arial, Helvetica, sans-serif;
-    font-size: 18pt;
     font-weight: 400;
-    color: #707070;
+    line-height: 1em;
+    margin-top: 0.25em;
+}
+#filmOriginalTitle {
+    font-size: 20pt;
+    color: #909090;
+}
+#filmYear {
+    font-size: 18pt;
 }
 #filmImageContainer,
 .btn {
@@ -106,7 +115,7 @@
 }
 
 .modal-header {
-    background-color: #009ABD;
+    background-color: #00B3DB;
     color: #ffffff;
 }
 .modal-body {
