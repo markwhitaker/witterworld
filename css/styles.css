@@ -143,3 +143,11 @@
 #footer p {
     margin-bottom: 0;
 }
+
+#footer #icon {
+    background-image: url(/images/icon.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+}
