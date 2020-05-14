@@ -40,7 +40,7 @@
 }
 
 .masthead {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 30px;
 }
 
@@ -48,8 +48,8 @@
     background-image: url(/images/icon.svg);
     background-repeat: no-repeat;
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
 }
 
 .masthead h1,
