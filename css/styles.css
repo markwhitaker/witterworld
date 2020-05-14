@@ -40,8 +40,16 @@
 }
 
 .masthead {
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.masthead #icon {
+    background-image: url(/images/icon.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 120px;
+    width: 120px;
 }
 
 .masthead h1,
@@ -180,14 +188,6 @@
 
 #footer p {
     margin-bottom: 0;
-}
-
-#footer #icon {
-    background-image: url(/images/icon.svg);
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 80px;
-    width: 80px;
 }
 
 #mapListButtons button {
