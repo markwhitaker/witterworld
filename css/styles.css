@@ -89,8 +89,10 @@
 }
 
 #filmImageContainer {
+    display: inline-block;
     border: 8px solid #f0f0f0;
     border-radius: 5px;
+    margin: 0 5px 10px 0;
 }
 
 #filmImageContainer.defaultImage {
@@ -132,11 +134,6 @@
 #filmYear {
     font-size: 18pt;
 }
-#filmImageContainer,
-.btn {
-    display: inline-block;
-    margin: 10px 5px 0 0;
-}
 
 .modal-header {
     background-color: #00B3DB;
@@ -153,11 +150,13 @@
     color: #ffffff;
 }
 
-.filmLink {
+.filmLinks .btn {
+    display: inline-block;
+    margin: 10px 5px 0 0;
+    padding: 10px 10px 10px 50px;
     background-position: center left 10px;
     background-repeat: no-repeat;
     background-size: 30px;
-    padding: 10px 10px 10px 50px;
 }
 
 #trailerLink {
