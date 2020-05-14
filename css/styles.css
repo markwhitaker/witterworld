@@ -140,6 +140,13 @@
 .modal-body {
     padding-bottom: 30px;
 }
+.modal-header button.close {
+    font-weight: 400;
+    font-size: 24pt;
+    text-shadow: none;
+    opacity: 1;
+    color: #ffffff;
+}
 
 .filmLink {
     background-position: center left 10px;
