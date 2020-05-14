@@ -10,61 +10,82 @@ $(function () {
         "#009ABD"
     ];
 
-    var map = new jvm.Map({
-        map: "world_merc",
-        container: $("#map"),
-        backgroundColor: "#00000000",
-        zoomMin: 0.9,
-        focusOn: {
-            x: 0.5,
-            y: 0.5,
-            scale: 0.9
-        },
-        series: {
-            regions: [{
-                attribute: "fill"
-            }]
-        },
-        onRegionClick: function (_, countryCode) {
-            showFilmDetails(countryCode);
-        }
-    });
-
+    var map;
     var filmsArraySorted = [];
     var films = {};
 
-    $.getJSON("data/films.json", function (data) {
-        filmsArraySorted = data.sort(function(a, b){
-            if (a.country < b.country) {
-                return -1;
-            } else if (a.country > b.country) {
-                return 1;
+    initialiseMap();
+    initialiseEventHandlers();
+    loadData();
+
+    //-----------------------------------------------------------
+
+    function initialiseMap() {
+        map = new jvm.Map({
+            map: "world_merc",
+            container: $("#map"),
+            backgroundColor: "#f0f0f0",
+            zoomMin: 0.9,
+            focusOn: {
+                x: 0.5,
+                y: 0.5,
+                scale: 0.95
+            },
+            series: {
+                regions: [{
+                    attribute: "fill"
+                }]
+            },
+            onRegionClick: function (_, countryCode) {
+                showFilmDetails(countryCode);
             }
-            return 0;
         });
-        for (let i = 0; i < filmsArraySorted.length; i++) {
-            let film = filmsArraySorted[i];
-            films[film.countryCode] = film;
-        }
+    }
+
+    function initialiseEventHandlers() {
+        $("a").prop("target", "_blank");
+
+        $("#btnShowMap").click(function () {
+            showMap();
+        });
+
+        $("#btnShowList").click(function () {
+            showList();
+        });
+    }
+
+    function loadData() {
+        $.getJSON("data/films.json", function (data) {
+            filmsArraySorted = data.sort(function (a, b) {
+                return (a.country < b.country) ? -1 :
+                    (a.country > b.country) ? 1 : 0;
+            });
+            for (let i = 0; i < filmsArraySorted.length; i++) {
+                let film = filmsArraySorted[i];
+                films[film.countryCode] = film;
+            }
+            setMapColours();
+            populateFilmList();
+        });
+    }
+
+    function setMapColours() {
         map.series.regions[0].setValues(getCountryColours());
-        populateFilmList();
-    });
+    }
 
-    $("a").prop("target", "_blank");
-
-    $("#btnShowMap").click(function(){
+    function showMap() {
         $("#btnShowMap").addClass("selected");
         $("#mapContainer").show();
         $("#btnShowList").removeClass("selected");
         $("#listContainer").hide();
-    });
+    }
 
-    $("#btnShowList").click(function(){
+    function showList() {
         $("#btnShowList").addClass("selected");
         $("#listContainer").show();
         $("#btnShowMap").removeClass("selected");
         $("#mapContainer").hide();
-    });
+    }
 
     function populateFilmList() {
         $("#list").empty();
@@ -172,6 +193,6 @@ $(function () {
                 .hide();
         }
 
-        $("#filmDetailsModal").modal()
+        $("#filmDetailsModal").modal();
     }
 });
