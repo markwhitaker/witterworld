@@ -44,6 +44,14 @@
     padding-bottom: 30px;
 }
 
+.masthead #icon {
+    background-image: url(/images/icon.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+
 .masthead h1,
 #suggestFilm h5 {
     font-weight: 900;
@@ -180,14 +188,6 @@
 
 #footer p {
     margin-bottom: 0;
-}
-
-#footer #icon {
-    background-image: url(/images/icon.svg);
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 80px;
-    width: 80px;
 }
 
 #mapListButtons button {
