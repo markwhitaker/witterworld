@@ -102,5 +102,44 @@
     "justwatch": "ratcatcher",
     "wikipedia": "Ratcatcher_(film)",
     "trailer": "https://www.youtube.com/watch?v=1_P_dMVLa48"
+  },
+  {
+    "countryCode": "DK",
+    "country": "Denmark",
+    "title": "The Hunt",
+    "originalTitle": "Jagten",
+    "year": 2012,
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/44/The_Hunt_%282012_film%29.jpg",
+    "letterboxd": "the-hunt-2012",
+    "imdb": "tt2106476",
+    "justwatch": "the-hunt-2012",
+    "wikipedia": "The_Hunt_(2012_film)",
+    "trailer": "https://www.youtube.com/watch?v=ieLIOBkMgAQ"
+  },
+  {
+    "countryCode": "TR",
+    "country": "Turkey",
+    "title": "Mustang",
+    "originalTitle": null,
+    "year": 2015,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/59/Mustang_poster.jpg",
+    "letterboxd": "mustang-2015",
+    "imdb": "tt3966404",
+    "justwatch": "mustang",
+    "wikipedia": "Mustang_(film)",
+    "trailer": "https://www.youtube.com/watch?v=ABNB3zw5BAo"
+  },
+  {
+    "countryCode": "AT",
+    "country": "Austria",
+    "title": "The Inheritors",
+    "originalTitle": "Die Siebtelbauern",
+    "year": 1998,
+    "image": "https://a.ltrbxd.com/resized/film-poster/5/1/1/6/8/51168-the-inheritors-0-230-0-345-crop.jpg",
+    "letterboxd": "the-inheritors",
+    "imdb": "tt0141824",
+    "justwatch": "",
+    "wikipedia": "The_Inheritors_(1998_film)",
+    "trailer": "https://www.youtube.com/watch?v=O7ENCacB9Es"
   }
 ]
