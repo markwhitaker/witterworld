@@ -52,6 +52,15 @@ $(function () {
         $("#btnShowList").click(function () {
             showList();
         });
+
+        $('#filmCountryFlag').on({
+            "error": function () {
+                $(this).hide();
+            },
+            "load": function () {
+                $(this).show();
+            }
+        });
     }
 
     function loadData() {
@@ -128,6 +137,9 @@ $(function () {
         $("#filmCountry").text(film.country);
         $("#filmTitle").text(film.title);
         $("#filmYear").text(film.year);
+        $("#filmCountryFlag")
+            .prop("src", "https://flagpedia.net/data/flags/vector/" + film.countryCode.toLowerCase() + ".svg")
+            .prop("alt", "National flag of " + film.country);
 
         if (film.image) {
             $("#filmImageContainer").removeClass("defaultImage");
