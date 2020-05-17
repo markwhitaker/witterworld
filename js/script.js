@@ -52,6 +52,15 @@ $(function () {
         $("#btnShowList").click(function () {
             showList();
         });
+
+        $('#filmCountryFlag').on({
+            "error": function () {
+                $(this).hide();
+            },
+            "load": function () {
+                $(this).show();
+            }
+        });
     }
 
     function loadData() {
