@@ -105,6 +105,13 @@
     max-width: 200px;
 }
 
+#filmCountryFlag {
+    height: 30px;
+    margin-right: 5px;
+    border: 2px solid #ffffffaa;
+    border-radius: 2px;
+}
+
 #filmTitleContainer {
     margin-bottom: 1.5em;
 }
