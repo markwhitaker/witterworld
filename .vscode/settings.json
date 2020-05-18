@@ -1,5 +1,6 @@
 {
     "less.compile": {
         "compress": true
-    }
+    },
+    "es6-css-minify.minifyOnSave": "exists"
 }
