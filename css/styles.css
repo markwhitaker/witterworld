@@ -1,211 +1,181 @@
 * {
-    font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
 }
-
 #mapContainer,
 #listContainer {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
-
 #map {
-    height: 600px;
+  height: 600px;
 }
-
 #list {
-    min-height: 400px;
-    padding: 10px 0;
+  min-height: 400px;
+  padding: 10px 0;
 }
-
 #list .listFilm {
-    display: inline-block;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #00B3DB;
-    color: white;
-    padding: 5px 10px;
-    margin: 0 10px 10px 0;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #00B3DB;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 0 10px 10px 0;
 }
 #list .listFilm:hover {
-    opacity: 80%;
+  opacity: 80%;
 }
-
 #listIntroduction {
-    font-size: 10pt;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  font-size: 10pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-
 .icon {
-    width: 30px;
+  width: 30px;
 }
-
 .masthead {
-    padding-top: 30px;
-    padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-
 .masthead #icon {
-    background-image: url(/images/icon.svg);
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 120px;
-    width: 120px;
+  background-image: url(/images/icon.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
 }
-
 .masthead h1,
 #suggestFilm h5 {
-    font-weight: 900;
-    text-transform: uppercase;
+  font-weight: 900;
+  text-transform: uppercase;
 }
-
 .content a {
-    color: #000000;
-    text-decoration: underline;
+  color: #000000;
+  text-decoration: underline;
 }
 .content a:hover {
-    color: #009ABD;
+  color: #009ABD;
 }
-
 #suggestFilm {
-    background-color: #E6F6FA;
-    border-radius: 10px;
+  background-color: #E6F6FA;
+  border-radius: 10px;
 }
- #suggestFilm > * {
-    padding: 10px 20px;
- }
- #suggestFilm h5 {
-    font-size: 20pt;
-    background-color: #00B3DB;
-    color: #ffffff;
-    border-radius: 10px 10px 0 0;
-    margin: 0;
+#suggestFilm h5 {
+  font-size: 20pt;
+  background-color: #00B3DB;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+  margin: 0;
 }
-
+#suggestFilm > * {
+  padding: 10px 20px;
+}
 #topContent {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 #description p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-
 #filmImageContainer {
-    display: inline-block;
-    border: 8px solid #f0f0f0;
-    border-radius: 5px;
-    margin: 0 5px 10px 0;
+  display: inline-block;
+  border: 5px solid #f0f0f0;
+  border-radius: 5px;
+  margin: 0 5px 10px 0;
 }
-
 #filmImageContainer.defaultImage {
-    width: 200px;
-    height: 250px;
-    background-image: url(/images/default_image.svg);
+  width: 200px;
+  height: 250px;
+  background-image: url(/images/default_image.svg);
 }
-
 #filmImage {
-    max-width: 200px;
+  max-width: 200px;
 }
-
 #filmCountryFlag {
-    height: 30px;
-    margin-right: 10px;
-    border: 2px solid #ffffffaa;
-    border-radius: 2px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid #ffffffaa;
+  border-radius: 2px;
 }
-
 #filmTitleContainer {
-    margin-bottom: 1.5em;
+  margin-bottom: 20px;
 }
-
 #filmTitle,
 #filmOriginalTitle,
 #filmYear {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 #filmTitle {
-    font-size: 30pt;
-    font-weight: 900;
-    line-height: 1em;
+  font-size: 30pt;
+  font-weight: 900;
+  line-height: 1em;
 }
 #filmOriginalTitle,
 #filmYear {
-    font-family: Markazi Text, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    line-height: 1em;
-    margin-top: 0.25em;
+  font-family: Markazi Text, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1em;
+  margin-top: 0.25em;
 }
 #filmOriginalTitle {
-    font-size: 20pt;
-    color: #909090;
+  font-size: 20pt;
+  color: #909090;
 }
 #filmYear {
-    font-size: 18pt;
+  font-size: 18pt;
 }
-
 .modal-header {
-    background-color: #00B3DB;
-    color: #ffffff;
-}
-.modal-body {
-    padding-bottom: 30px;
+  background-color: #00B3DB;
+  color: #ffffff;
 }
 .modal-header button.close {
-    font-weight: 400;
-    font-size: 24pt;
-    text-shadow: none;
-    opacity: 1;
-    color: #ffffff;
+  font-weight: 400;
+  font-size: 24pt;
+  text-shadow: none;
+  opacity: 1;
+  color: #ffffff;
 }
-
+.modal-body {
+  padding-bottom: 30px;
+}
 .filmLinks .btn {
-    display: inline-block;
-    margin: 10px 5px 0 0;
-    padding: 10px 10px 10px 50px;
-    background-position: center left 10px;
-    background-repeat: no-repeat;
-    background-size: 30px;
+  display: inline-block;
+  margin: 10px 5px 0 0;
+  padding: 10px 10px 10px 50px;
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+  background-size: 30px;
 }
-
 #trailerLink {
-    background-image: url(/images/trailer.svg);
+  background-image: url(/images/trailer.svg);
 }
-
 #letterboxdLink {
-    background-image: url(/images/letterboxd.svg);
+  background-image: url(/images/letterboxd.svg);
 }
-
 #imdbLink {
-    background-image: url(/images/imdb.svg);
+  background-image: url(/images/imdb.svg);
 }
-
 #wikipediaLink {
-    background-image: url(/images/wikipedia.svg);
+  background-image: url(/images/wikipedia.svg);
 }
-
 #justwatchLink {
-    background-image: url(/images/justwatch.svg);
+  background-image: url(/images/justwatch.svg);
 }
-
 #footer {
-    padding-top: 10px;
-    padding-bottom: 30px;
-    font-size: 10pt;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-size: 10pt;
 }
-
 #footer p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 #mapListButtons button {
-    border-width: 2px 2px 0 2px;
-    border-style: solid;
-    border-radius: 5px 5px 0 0;
-    padding: 5px 20px;
-    margin-right: 5px;
-    background-color: #ffffff;
-    border-color: #f0f0f0;
+  border-width: 2px 2px 0 2px;
+  border-style: solid;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 20px;
+  margin-right: 5px;
+  background-color: #ffffff;
+  border-color: #f0f0f0;
 }
-
 #mapListButtons button.selected {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
