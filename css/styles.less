@@ -1,0 +1,268 @@
+// ---------- Variables ----------
+
+// Colours
+@colour-light-blue: #E6F6FA;
+@colour-blue: #00B3DB;
+@colour-dark-blue: #009ABD;
+@colour-white: #ffffff;
+@colour-white-semi-opaque: #ffffffaa;
+@colour-light-grey: #f0f0f0;
+@colour-dark-grey: #909090;
+@colour-black: #000000;
+
+// Font families
+@font-family-default: Raleway, Arial, Helvetica, sans-serif;
+@font-family-international: Markazi Text, Arial, Helvetica, sans-serif;
+
+// Font weights
+@font-weight-normal: 400;
+@font-weight-bold: 900;
+
+// Font sizes
+@font-size-small: 10pt;
+@font-size-medium: 18pt;
+@font-size-large: 20pt;
+@font-size-xlarge: 30pt;
+@font-size-modal-close-button: 24pt;
+
+// Dimensions
+@border-width: 2px;
+@padding-small: 5px;
+@padding-medium: 10px;
+@padding-large: 20px;
+@padding-xlarge: 30px;
+@padding-xxxlarge: 50px;
+@map-height: 600px;
+@list-min-height: 400px;
+@site-icon-size: 120px;
+@film-image-width: 200px;
+@film-image-height: 250px;
+
+
+// -------------------------------
+
+* {
+    font-family: @font-family-default;
+}
+
+#mapContainer,
+#listContainer {
+    background-color: @colour-light-grey;
+}
+
+#map {
+    height: @map-height;
+}
+
+#list {
+    min-height: @list-min-height;
+    padding: @padding-medium 0;
+
+    .listFilm {
+        display: inline-block;
+        border-radius: @padding-small;
+        cursor: pointer;
+        background-color: @colour-blue;
+        color: @colour-white;
+        padding: @padding-small @padding-medium;
+        margin: 0 @padding-medium @padding-medium 0;
+
+        &:hover {
+            opacity: 80%;
+        }
+    }
+}
+
+#listIntroduction {
+    font-size: @font-size-small;
+    margin-top: @padding-medium;
+    margin-bottom: @padding-medium;
+}
+
+.icon {
+    width: @padding-xlarge;
+}
+
+.masthead {
+    padding-top: @padding-xlarge;
+    padding-bottom: @padding-xlarge;
+
+    #icon {
+        background-image: url(/images/icon.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: @site-icon-size;
+        width: @site-icon-size;
+    }
+}
+
+
+.masthead h1,
+#suggestFilm h5 {
+    font-weight: @font-weight-bold;
+    text-transform: uppercase;
+}
+
+.content {
+    a {
+        color: @colour-black;
+        text-decoration: underline;
+
+        &:hover {
+            color: @colour-dark-blue;
+        }
+    }
+}
+
+#suggestFilm {
+    background-color: @colour-light-blue;
+    border-radius: @padding-medium;
+
+    h5 {
+        font-size: @font-size-large;
+        background-color: @colour-blue;
+        color: @colour-white;
+        border-radius: @padding-medium @padding-medium 0 0;
+        margin: 0;
+    }
+
+    & > * {
+        padding: @padding-medium @padding-large;
+    }
+}
+
+#topContent {
+    margin-bottom: @padding-xlarge;
+}
+#description {
+    p {
+        margin-bottom: @padding-medium;
+    }
+}
+
+#filmImageContainer {
+    display: inline-block;
+    border: @padding-small solid @colour-light-grey;
+    border-radius: @padding-small;
+    margin: 0 @padding-small @padding-medium 0;
+
+    &.defaultImage {
+        width: @film-image-width;
+        height: @film-image-height;
+        background-image: url(/images/default_image.svg);
+    }
+}
+
+#filmImage {
+    max-width: @film-image-width;
+}
+
+#filmCountryFlag {
+    height: @padding-xlarge;
+    margin-right: @padding-medium;
+    border: @border-width solid @colour-white-semi-opaque;
+    border-radius: @border-width;
+}
+
+#filmTitleContainer {
+    margin-bottom: @padding-large;
+}
+
+#filmTitle,
+#filmOriginalTitle,
+#filmYear {
+    margin-bottom: 0;
+}
+
+#filmTitle {
+    font-size: @font-size-xlarge;
+    font-weight: @font-weight-bold;
+    line-height: 1em;
+}
+#filmOriginalTitle,
+#filmYear {
+    font-family: @font-family-international;
+    font-weight: @font-weight-normal;
+    line-height: 1em;
+    margin-top: 0.25em;
+}
+#filmOriginalTitle {
+    font-size: @font-size-large;
+    color: @colour-dark-grey;
+}
+#filmYear {
+    font-size: @font-size-medium;
+}
+
+.modal-header {
+    background-color: @colour-blue;
+    color: @colour-white;
+
+    button.close {
+        font-weight: @font-weight-normal;
+        font-size: @font-size-modal-close-button;
+        text-shadow: none;
+        opacity: 1;
+        color: @colour-white;
+    }
+}
+.modal-body {
+    padding-bottom: @padding-xlarge;
+}
+
+.filmLinks {
+    .btn {
+        display: inline-block;
+        margin: @padding-medium @padding-small 0 0;
+        padding: @padding-medium @padding-medium @padding-medium @padding-xxxlarge;
+        background-position: center left @padding-medium;
+        background-repeat: no-repeat;
+        background-size: @padding-xlarge;
+    }
+}
+
+#trailerLink {
+    background-image: url(/images/trailer.svg);
+}
+
+#letterboxdLink {
+    background-image: url(/images/letterboxd.svg);
+}
+
+#imdbLink {
+    background-image: url(/images/imdb.svg);
+}
+
+#wikipediaLink {
+    background-image: url(/images/wikipedia.svg);
+}
+
+#justwatchLink {
+    background-image: url(/images/justwatch.svg);
+}
+
+#footer {
+    padding-top: @padding-medium;
+    padding-bottom: @padding-xlarge;
+    font-size: @font-size-small;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+#mapListButtons {
+    button {
+        border-width: @border-width @border-width 0 @border-width;
+        border-style: solid;
+        border-radius: @padding-small @padding-small 0 0;
+        padding: @padding-small @padding-large;
+        margin-right: @padding-small;
+        background-color: @colour-white;
+        border-color: @colour-light-grey;
+
+        &.selected {
+            background-color: @colour-light-grey;
+        }
+    }
+}
