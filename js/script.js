@@ -141,69 +141,35 @@ $(function () {
             .prop("src", "https://flagpedia.net/data/flags/vector/" + film.countryCode.toLowerCase() + ".svg")
             .prop("alt", "National flag of " + film.country);
 
-        if (film.image) {
-            $("#filmImageContainer").removeClass("defaultImage");
-            $("#filmImage")
-                .prop("src", film.image)
-                .show();
-        } else {
-            $("#filmImageContainer").addClass("defaultImage");
-            $("#filmImage").hide();
-        }
+        $("#filmImageContainer")
+            .toggleClass("defaultImage", film.image == null);
+        $("#filmImage")
+            .prop("src", film.image)
+            .toggle(film.image != null);
 
-        if (film.originalTitle) {
-            $("#filmOriginalTitle")
-                .text(film.originalTitle)
-                .show();
-        } else {
-            $("#filmOriginalTitle")
-                .hide();
-        }
+        $("#filmOriginalTitle")
+            .text(film.originalTitle)
+            .toggle(film.originalTitle != null);
 
-        if (film.imdb) {
-            $("#imdbLink")
-                .prop("href", "https://www.imdb.com/title/" + film.imdb + "/")
-                .show();
-        } else {
-            $("#imdbLink")
-                .hide();
-        }
+        $("#imdbLink")
+            .prop("href", "https://www.imdb.com/title/" + film.imdb + "/")
+            .toggle(film.imdb != null);
 
-        if (film.letterboxd) {
-            $("#letterboxdLink")
-                .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
-                .show();
-        } else {
-            $("#letterboxdLink")
-                .hide()
-        }
+        $("#letterboxdLink")
+            .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
+            .toggle(film.letterboxd != null);
 
-        if (film.wikipedia) {
-            $("#wikipediaLink")
-                .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
-                .show();
-        } else {
-            $("#wikipediaLink")
-                .hide();
-        }
+        $("#wikipediaLink")
+            .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
+            .toggle(film.wikipedia != null);
 
-        if (film.justwatch) {
-            $("#justwatchLink")
-                .prop("href", "https://www.justwatch.com/uk/movie/" + film.justwatch)
-                .show();
-        } else {
-            $("#justwatchLink")
-                .hide();
-        }
+        $("#justwatchLink")
+            .prop("href", "https://www.justwatch.com/uk/movie/" + film.justwatch)
+            .toggle(film.justwatch != null);
 
-        if (film.trailer) {
-            $("#trailerLink")
-                .prop("href", film.trailer)
-                .show();
-        } else {
-            $("#trailerLink")
-                .hide();
-        }
+        $("#trailerLink")
+            .prop("href", film.trailer)
+            .show(film.trailer != null);
 
         $("#filmDetailsModal").modal();
     }
