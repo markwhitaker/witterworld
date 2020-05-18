@@ -20,9 +20,10 @@
 
 // Font sizes
 @font-size-small: 10pt;
-@font-size-medium: 18pt;
-@font-size-large: 20pt;
-@font-size-xlarge: 30pt;
+@font-size-regular: 12pt;
+@font-size-large: 18pt;
+@font-size-xlarge: 20pt;
+@font-size-xxlarge: 30pt;
 @font-size-modal-close-button: 24pt;
 
 // Dimensions
@@ -41,8 +42,9 @@
 
 // -------------------------------
 
-* {
+body {
     font-family: @font-family-default;
+    font-size: @font-size-regular;
 }
 
 #mapContainer,
@@ -87,6 +89,17 @@
     padding-top: @padding-xlarge;
     padding-bottom: @padding-xlarge;
 
+    h1 {
+        font-size: @font-size-xxlarge;
+        font-weight: @font-weight-bold;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        font-size: @font-size-large;
+        font-weight: @font-weight-normal;
+    }
+
     #icon {
         background-image: url(/images/icon.svg);
         background-repeat: no-repeat;
@@ -94,13 +107,6 @@
         height: @site-icon-size;
         width: @site-icon-size;
     }
-}
-
-
-.masthead h1,
-#suggestFilm h5 {
-    font-weight: @font-weight-bold;
-    text-transform: uppercase;
 }
 
 .content {
@@ -119,7 +125,9 @@
     border-radius: @padding-medium;
 
     h5 {
-        font-size: @font-size-large;
+        font-size: @font-size-xlarge;
+        font-weight: @font-weight-bold;
+        text-transform: uppercase;
         background-color: @colour-blue;
         color: @colour-white;
         border-radius: @padding-medium @padding-medium 0 0;
@@ -165,7 +173,7 @@
 }
 
 #filmTitleContainer {
-    margin-bottom: @padding-large;
+    margin-bottom: @padding-xlarge;
 }
 
 #filmTitle,
@@ -175,28 +183,30 @@
 }
 
 #filmTitle {
-    font-size: @font-size-xlarge;
+    font-size: @font-size-xxlarge;
     font-weight: @font-weight-bold;
     line-height: 1em;
 }
-#filmOriginalTitle,
-#filmYear {
+#filmOriginalTitle {
     font-family: @font-family-international;
     font-weight: @font-weight-normal;
-    line-height: 1em;
-    margin-top: 0.25em;
-}
-#filmOriginalTitle {
-    font-size: @font-size-large;
+    font-size: @font-size-xlarge;
     color: @colour-dark-grey;
 }
+#filmOriginalTitle,
 #filmYear {
-    font-size: @font-size-medium;
+    line-height: 1em;
+    margin-top: 0.25em;
 }
 
 .modal-header {
     background-color: @colour-blue;
     color: @colour-white;
+
+    h4 {
+        font-size: @font-size-xlarge;
+        font-weight: @font-weight-normal;
+    }
 
     button.close {
         font-weight: @font-weight-normal;

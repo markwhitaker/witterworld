@@ -1,5 +1,6 @@
-* {
+body {
   font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 12pt;
 }
 #mapContainer,
 #listContainer {
@@ -36,17 +37,21 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+.masthead h1 {
+  font-size: 30pt;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.masthead h4 {
+  font-size: 18pt;
+  font-weight: 400;
+}
 .masthead #icon {
   background-image: url(/images/icon.svg);
   background-repeat: no-repeat;
   display: inline-block;
   height: 120px;
   width: 120px;
-}
-.masthead h1,
-#suggestFilm h5 {
-  font-weight: 900;
-  text-transform: uppercase;
 }
 .content a {
   color: #000000;
@@ -61,6 +66,8 @@
 }
 #suggestFilm h5 {
   font-size: 20pt;
+  font-weight: 900;
+  text-transform: uppercase;
   background-color: #00B3DB;
   color: #ffffff;
   border-radius: 10px 10px 0 0;
@@ -96,7 +103,7 @@
   border-radius: 2px;
 }
 #filmTitleContainer {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #filmTitle,
 #filmOriginalTitle,
@@ -108,23 +115,24 @@
   font-weight: 900;
   line-height: 1em;
 }
-#filmOriginalTitle,
-#filmYear {
+#filmOriginalTitle {
   font-family: Markazi Text, Arial, Helvetica, sans-serif;
   font-weight: 400;
-  line-height: 1em;
-  margin-top: 0.25em;
-}
-#filmOriginalTitle {
   font-size: 20pt;
   color: #909090;
 }
+#filmOriginalTitle,
 #filmYear {
-  font-size: 18pt;
+  line-height: 1em;
+  margin-top: 0.25em;
 }
 .modal-header {
   background-color: #00B3DB;
   color: #ffffff;
+}
+.modal-header h4 {
+  font-size: 20pt;
+  font-weight: 400;
 }
 .modal-header button.close {
   font-weight: 400;
