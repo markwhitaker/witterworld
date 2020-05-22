@@ -173,7 +173,14 @@ $(function () {
 
         $("#trailerLink")
             .prop("href", film.trailer)
-            .show(film.trailer != null);
+            .toggle(film.trailer != null);
+
+        $("#reviewLink")
+            .prop("href", "https://www.youtube.com/watch?v=" + film.review)
+            .toggle(film.review != null);
+
+        $("#filmReviewer")
+            .text(film.reviewer);
 
         $("#filmDetailsModal").modal();
     }
