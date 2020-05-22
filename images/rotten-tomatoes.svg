@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 100 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-554,-1)">
+        <g id="rotten-tomatoes" transform="matrix(1.28205,0,0,1.2987,-21.641,-146.337)">
+            <rect x="449" y="114" width="78" height="77" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="449" y="114" width="78" height="77"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g transform="matrix(0.78,0,0,0.77,105.02,113.23)">
+                    <circle cx="491" cy="51" r="50" style="fill:rgb(255,214,0);"/>
+                </g>
+                <g id="Rotten_Tomatoes" transform="matrix(0.410018,0,0,0.404761,488,152.5)">
+                    <g transform="matrix(1,0,0,1,-69.375,-70.625)">
+                        <g id="layer1">
+                            <path id="path3412" d="M20.154,40.829C-7.995,68.451 6.497,101.84 14.42,112.76C49.674,154.714 107.212,138.099 126.31,106.853C131.071,98.65 148.864,53.386 102.334,28.844L20.154,40.829Z" style="fill:rgb(249,50,8);fill-rule:nonzero;"/>
+                            <path id="path3471" d="M39.613,39.265L44.391,30.404L72.797,25.366L83.916,34.574L39.613,39.265Z" style="fill:rgb(249,50,8);fill-rule:nonzero;"/>
+                        </g>
+                        <g id="layer2">
+                            <path id="path3437" d="M39.436,8.57L48.404,3.287L55.161,18.766C58.954,12.443 68.951,2.45 80.1,14.098C75.372,15.361 72.584,17.953 72.36,22.574C87.505,18.405 103.703,25.787 105.899,31.665C94.948,27.351 78.204,42.042 64.128,34C64.137,49.045 51.511,50.635 44.226,51.076C46.303,46.079 49.817,41.082 45.7,36.088C38.082,44.259 31.826,46.756 12.53,40.756C17.406,39.077 27.373,29.366 36.978,29.331C30.203,26.864 24.688,27.244 19.164,27.856C22.081,23.895 31.313,12.659 47.789,19.38L39.436,8.57Z" style="fill:rgb(2,144,46);fill-rule:nonzero;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

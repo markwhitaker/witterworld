@@ -159,6 +159,10 @@ $(function () {
             .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
             .toggle(film.letterboxd != null);
 
+        $("#rottenTomatoesLink")
+            .prop("href", "https://www.rottentomatoes.com/m/" + film.rottenTomatoes)
+            .toggle(film.rottenTomatoes != null);
+
         $("#wikipediaLink")
             .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
             .toggle(film.wikipedia != null);

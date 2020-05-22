@@ -10,7 +10,8 @@
     "imdb": "tt2215113",
     "justwatch": null,
     "wikipedia": null,
-    "trailer": "https://www.youtube.com/watch?v=evEpSuIfiLg"
+    "trailer": "https://www.youtube.com/watch?v=evEpSuIfiLg",
+    "rottenTomatoes": "winter_nomads"
   },
   {
     "countryCode": "IS",
@@ -23,7 +24,8 @@
     "imdb": "tt0237993",
     "justwatch": "101-reykjavik",
     "wikipedia": "101_Reykjavík",
-    "trailer": "https://www.youtube.com/watch?v=_M33gosFRec"
+    "trailer": "https://www.youtube.com/watch?v=_M33gosFRec",
+    "rottenTomatoes": "101_reykjavik"
   },
   {
     "countryCode": "RO",
@@ -36,7 +38,8 @@
     "imdb": "tt0799991",
     "justwatch": null,
     "wikipedia": "The_Way_I_Spent_the_End_of_the_World",
-    "trailer": "https://www.youtube.com/watch?v=iLVxKkhp8l4"
+    "trailer": "https://www.youtube.com/watch?v=iLVxKkhp8l4",
+    "rottenTomatoes": "1190123_1190123_way_i_spent_the_end_of_the_world"
   },
   {
     "countryCode": "IT",
@@ -49,7 +52,8 @@
     "imdb": "tt0398883",
     "justwatch": "the-consequences-of-love",
     "wikipedia": "The_Consequences_of_Love",
-    "trailer": "https://www.youtube.com/watch?v=uDE9J0zPd00"
+    "trailer": "https://www.youtube.com/watch?v=uDE9J0zPd00",
+    "rottenTomatoes": "consequences_of_love"
   },
   {
     "countryCode": "PL",
@@ -62,7 +66,8 @@
     "imdb": "tt2209386",
     "justwatch": null,
     "wikipedia": "Jesteś_Bogiem",
-    "trailer": "https://www.youtube.com/watch?v=VscRsHmVCdE"
+    "trailer": "https://www.youtube.com/watch?v=VscRsHmVCdE",
+    "rottenTomatoes": "you_are_god"
   },
   {
     "countryCode": "IQ",
@@ -75,7 +80,8 @@
     "imdb": "tt1415290",
     "justwatch": "son-of-babylon",
     "wikipedia": "Son_of_Babylon",
-    "trailer": "https://www.youtube.com/watch?v=KrMB_T9e_Vg"
+    "trailer": "https://www.youtube.com/watch?v=KrMB_T9e_Vg",
+    "rottenTomatoes": "son_of_babylon"
   },
   {
     "countryCode": "MT",
@@ -88,7 +94,8 @@
     "imdb": "tt2521700",
     "justwatch": "simshar",
     "wikipedia": "Simshar_(film)",
-    "trailer": "https://www.youtube.com/watch?v=jnOLsCGV8XQ"
+    "trailer": "https://www.youtube.com/watch?v=jnOLsCGV8XQ",
+    "rottenTomatoes": null
   },
   {
     "countryCode": "GB-SCT",
@@ -101,7 +108,8 @@
     "imdb": "tt0171685",
     "justwatch": "ratcatcher",
     "wikipedia": "Ratcatcher_(film)",
-    "trailer": "https://www.youtube.com/watch?v=1_P_dMVLa48"
+    "trailer": "https://www.youtube.com/watch?v=1_P_dMVLa48",
+    "rottenTomatoes": "ratcatcher"
   },
   {
     "countryCode": "DK",
@@ -114,7 +122,8 @@
     "imdb": "tt2106476",
     "justwatch": "the-hunt-2012",
     "wikipedia": "The_Hunt_(2012_film)",
-    "trailer": "https://www.youtube.com/watch?v=ieLIOBkMgAQ"
+    "trailer": "https://www.youtube.com/watch?v=ieLIOBkMgAQ",
+    "rottenTomatoes": "the_hunt_2013"
   },
   {
     "countryCode": "TR",
@@ -127,7 +136,8 @@
     "imdb": "tt3966404",
     "justwatch": "mustang",
     "wikipedia": "Mustang_(film)",
-    "trailer": "https://www.youtube.com/watch?v=ABNB3zw5BAo"
+    "trailer": "https://www.youtube.com/watch?v=ABNB3zw5BAo",
+    "rottenTomatoes": "mustang_2015"
   },
   {
     "countryCode": "AT",
@@ -140,7 +150,8 @@
     "imdb": "tt0141824",
     "justwatch": "",
     "wikipedia": "The_Inheritors_(1998_film)",
-    "trailer": "https://www.youtube.com/watch?v=O7ENCacB9Es"
+    "trailer": "https://www.youtube.com/watch?v=O7ENCacB9Es",
+    "rottenTomatoes": "1089101_inheritors"
   },
   {
     "countryCode": "CA",
@@ -153,7 +164,8 @@
     "imdb": "tt0090985",
     "justwatch": "the-decline-of-the-american-empire",
     "wikipedia": "The_Decline_of_the_American_Empire",
-    "trailer": "https://www.youtube.com/watch?v=s3tVuyRlwYc"
+    "trailer": "https://www.youtube.com/watch?v=s3tVuyRlwYc",
+    "rottenTomatoes": "le_declin_de_lempire_americain"
   },
   {
     "countryCode": "SE",
@@ -166,7 +178,8 @@
     "imdb": "tt5287168",
     "justwatch": "sami-blood",
     "wikipedia": "Sami_Blood",
-    "trailer": "https://www.youtube.com/watch?v=4Y3xkshhwLM"
+    "trailer": "https://www.youtube.com/watch?v=4Y3xkshhwLM",
+    "rottenTomatoes": "sami_blood"
   },
   {
     "countryCode": "AS",
@@ -179,7 +192,8 @@
     "imdb": "tt2446600",
     "justwatch": "next-goal-wins",
     "wikipedia": "Next_Goal_Wins_(2014_film)",
-    "trailer": "https://www.youtube.com/watch?v=OIeKkjJNM6A"
+    "trailer": "https://www.youtube.com/watch?v=OIeKkjJNM6A",
+    "rottenTomatoes": "next_goal_wins"
   },
   {
     "countryCode": "VE",
@@ -192,7 +206,8 @@
     "imdb": "tt0051372",
     "justwatch": null,
     "wikipedia": "Araya_(film)",
-    "trailer": "https://www.youtube.com/watch?v=2XgbbioDPzM"
+    "trailer": "https://www.youtube.com/watch?v=2XgbbioDPzM",
+    "rottenTomatoes": "araya"
   },
   {
     "countryCode": "PG",
@@ -205,6 +220,7 @@
     "imdb": "tt0085544",
     "justwatch": null,
     "wikipedia": "First_Contact_(1983_film)",
-    "trailer": "https://www.youtube.com/watch?v=2Y5rC7kDx3o"
+    "trailer": "https://www.youtube.com/watch?v=2Y5rC7kDx3o",
+    "rottenTomatoes": "first_contact_1983"
   }
 ]
