@@ -172,7 +172,7 @@ $(function () {
             .toggle(film.justwatch != null);
 
         $("#trailerLink")
-            .prop("href", film.trailer)
+            .prop("href", "https://www.youtube.com/watch?v=" + film.trailer)
             .toggle(film.trailer != null);
 
         $("#reviewLink")
