@@ -141,5 +141,70 @@
     "justwatch": "",
     "wikipedia": "The_Inheritors_(1998_film)",
     "trailer": "https://www.youtube.com/watch?v=O7ENCacB9Es"
+  },
+  {
+    "countryCode": "CA",
+    "country": "Canada",
+    "title": "The Decline of the American Empire",
+    "originalTitle": "Le déclin de l'empire américain",
+    "year": 1986,
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/fa/Declineamempire_ver1.jpg",
+    "letterboxd": "the-decline-of-the-american-empire",
+    "imdb": "tt0090985",
+    "justwatch": "the-decline-of-the-american-empire",
+    "wikipedia": "The_Decline_of_the_American_Empire",
+    "trailer": "https://www.youtube.com/watch?v=s3tVuyRlwYc"
+  },
+  {
+    "countryCode": "SE",
+    "country": "Sweden",
+    "title": "Sami Blood",
+    "originalTitle": "Sameblod",
+    "year": 2016,
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/20/Poster-Sami_Blood.jpg",
+    "letterboxd": "sami-blood",
+    "imdb": "tt5287168",
+    "justwatch": "sami-blood",
+    "wikipedia": "Sami_Blood",
+    "trailer": "https://www.youtube.com/watch?v=4Y3xkshhwLM"
+  },
+  {
+    "countryCode": "AS",
+    "country": "American Samoa",
+    "title": "Next Goal Wins",
+    "originalTitle": null,
+    "year": 2014,
+    "image": "https://image.tmdb.org/t/p/w220_and_h330_face/2I0sGuLJ8vuwrQWU90mLZBtaC00.jpg",
+    "letterboxd": "next-goal-wins",
+    "imdb": "tt2446600",
+    "justwatch": "next-goal-wins",
+    "wikipedia": "Next_Goal_Wins_(2014_film)",
+    "trailer": "https://www.youtube.com/watch?v=OIeKkjJNM6A"
+  },
+  {
+    "countryCode": "VE",
+    "country": "Venezuela",
+    "title": "Araya",
+    "originalTitle": null,
+    "year": 1959,
+    "image": "https://image.tmdb.org/t/p/w220_and_h330_face/yzh52rfFFQl4N6RWLnbAmC04oSX.jpg",
+    "letterboxd": "araya",
+    "imdb": "tt0051372",
+    "justwatch": null,
+    "wikipedia": "Araya_(film)",
+    "trailer": "https://www.youtube.com/watch?v=2XgbbioDPzM"
+  },
+  {
+    "countryCode": "PG",
+    "country": "Papua New Guinea",
+    "title": "First Contact",
+    "originalTitle": null,
+    "year": 1983,
+    "image": "https://a.ltrbxd.com/resized/film-poster/1/0/4/9/0/5/104905-first-contact-0-230-0-345-crop.jpg",
+    "letterboxd": "first-contact",
+    "imdb": "tt0085544",
+    "justwatch": null,
+    "wikipedia": "First_Contact_(1983_film)",
+    "trailer": "https://www.youtube.com/watch?v=2Y5rC7kDx3o"
   }
 ]
