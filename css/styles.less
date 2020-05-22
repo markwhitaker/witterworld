@@ -176,25 +176,30 @@ body {
     margin-bottom: @padding-xlarge;
 }
 
+#filmTitleAndYear,
 #filmTitle,
 #filmOriginalTitle,
 #filmYear {
     margin-bottom: 0;
 }
 
-#filmTitle {
-    font-size: @font-size-xxlarge;
-    font-weight: @font-weight-bold;
-    line-height: 1em;
+#filmTitleAndYear {
+    #filmTitle {
+        font-size: @font-size-xxlarge;
+        font-weight: @font-weight-bold;
+        line-height: 1em;
+    }
+
+    small {
+        font-size: @font-size-regular;
+        font-weight: @font-weight-normal;
+    }
 }
 #filmOriginalTitle {
     font-family: @font-family-international;
     font-weight: @font-weight-normal;
     font-size: @font-size-large;
     color: @colour-dark-grey;
-}
-#filmOriginalTitle,
-#filmYear {
     line-height: 1em;
     margin-top: 0.25em;
 }
