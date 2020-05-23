@@ -145,6 +145,7 @@ $(function () {
             .toggleClass("defaultImage", film.image == null);
         $("#filmImage")
             .prop("src", film.image)
+            .prop("alt", "Film poster for " + film.title)
             .toggle(film.image != null);
 
         $("#filmOriginalTitle")
