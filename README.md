@@ -10,4 +10,9 @@ Full source code for the [Wittertainment World Map of Cinema](https://witterworl
 
 You just build it.
 
-I use [Microsoft Visual Code](https://code.visualstudio.com/) with the [JS & CSS Minifier (Minify)](https://marketplace.visualstudio.com/items?itemName=olback.es6-css-minify) and [Easy LESS](https://marketplace.visualstudio.com/items?itemName=mrcrowl.easy-less) extensions. The [VS Code settings](.vscode/settings.json) in this project will help you along if you go that way.
+I use [Microsoft Visual Code](https://code.visualstudio.com/) with these extensions:
+- [JS & CSS Minifier (Minify)](https://marketplace.visualstudio.com/items?itemName=olback.es6-css-minify)
+- [Easy LESS](https://marketplace.visualstudio.com/items?itemName=mrcrowl.easy-less)
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+ The [VS Code settings](.vscode/settings.json) in this project will help you along if you go that way.
