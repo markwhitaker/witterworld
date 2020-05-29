@@ -14,33 +14,14 @@ $(function () {
     var filmsArraySorted = [];
     var films = {};
 
-    initialiseMap();
     initialiseEventHandlers();
-    loadData();
+
+    loadData(function() {
+        initialiseMap();
+        initialiseList();
+    });
 
     //-----------------------------------------------------------
-
-    function initialiseMap() {
-        map = new jvm.Map({
-            map: "world_merc",
-            container: $("#map"),
-            backgroundColor: "#f0f0f0",
-            zoomMin: 0.9,
-            focusOn: {
-                x: 0.5,
-                y: 0.5,
-                scale: 0.95
-            },
-            series: {
-                regions: [{
-                    attribute: "fill"
-                }]
-            },
-            onRegionClick: function (_, countryCode) {
-                showFilmDetails(countryCode);
-            }
-        });
-    }
 
     function initialiseEventHandlers() {
         $("a").prop("target", "_blank");
@@ -63,7 +44,10 @@ $(function () {
         });
     }
 
-    function loadData() {
+    function loadData(onLoaded) {
+        filmsArraySorted = [];
+        films = {};
+
         $.getJSON("data/films.json", function (data) {
             filmsArraySorted = data.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
@@ -73,30 +57,42 @@ $(function () {
                 let film = filmsArraySorted[i];
                 films[film.countryCode] = film;
             }
-            setMapColours();
-            populateFilmList();
+
+            onLoaded();
         });
     }
 
-    function setMapColours() {
+    function initialiseMap() {
+        map = new jvm.Map({
+            map: "world_merc",
+            container: $("#map"),
+            backgroundColor: "#f0f0f0",
+            zoomMin: 0.9,
+            focusOn: {
+                x: 0.5,
+                y: 0.5,
+                scale: 0.95
+            },
+            series: {
+                regions: [{
+                    attribute: "fill"
+                }]
+            },
+            onRegionClick: function (_, countryCode) {
+                showFilmDetails(countryCode);
+            }
+        });
+
+        // Set map colours
         map.series.regions[0].setValues(getCountryColours());
     }
 
-    function showMap() {
-        $("#btnShowMap").addClass("selected");
-        $("#mapContainer").show();
-        $("#btnShowList").removeClass("selected");
-        $("#listContainer").hide();
+    function uninitialiseMap() {
+        map.remove();
+        map = undefined;
     }
 
-    function showList() {
-        $("#btnShowList").addClass("selected");
-        $("#listContainer").show();
-        $("#btnShowMap").removeClass("selected");
-        $("#mapContainer").hide();
-    }
-
-    function populateFilmList() {
+    function initialiseList() {
         $("#list").empty();
 
         for (let i = 0; i < filmsArraySorted.length; i++) {
@@ -110,6 +106,24 @@ $(function () {
                         showFilmDetails(film.countryCode);
                     }));
         }
+    }
+
+    function showMap() {
+        $("#btnShowMap").addClass("selected");
+        $("#mapContainer").show();
+        initialiseMap();
+
+        $("#btnShowList").removeClass("selected");
+        $("#listContainer").hide();
+    }
+
+    function showList() {
+        $("#btnShowList").addClass("selected");
+        $("#listContainer").show();
+        uninitialiseMap();
+
+        $("#btnShowMap").removeClass("selected");
+        $("#mapContainer").hide();
     }
 
     function getCountryColours() {
