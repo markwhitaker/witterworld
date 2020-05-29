@@ -48,13 +48,14 @@ $(function () {
         filmsArraySorted = [];
         films = {};
 
-        $.getJSON("data/films.json", function (data) {
-            filmsArraySorted = data.sort(function (a, b) {
+        $.getJSON("data/films.json", function (filmsArray) {
+            filmsArraySorted = filmsArray.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
                     (a.country > b.country) ? 1 : 0;
             });
             for (let i = 0; i < filmsArraySorted.length; i++) {
                 let film = filmsArraySorted[i];
+                film.colour = getRandomActiveMapColour();
                 films[film.countryCode] = film;
             }
 
@@ -84,7 +85,7 @@ $(function () {
         });
 
         // Set map colours
-        map.series.regions[0].setValues(getCountryColours());
+        map.series.regions[0].setValues(getMapColours());
     }
 
     function uninitialiseMap() {
@@ -100,7 +101,7 @@ $(function () {
             $("#list").append(
                 $("<span></span>")
                     .addClass("listFilm")
-                    .prop("style", "background-color: " + getRandomActiveMapColour())
+                    .prop("style", "background-color: " + film.colour)
                     .text(film.country)
                     .click(function(){
                         showFilmDetails(film.countryCode);
@@ -126,11 +127,11 @@ $(function () {
         $("#mapContainer").hide();
     }
 
-    function getCountryColours() {
+    function getMapColours() {
         var colours = {};
         for (let region in map.regions) {
             colours[region] = films[region]
-                ? getRandomActiveMapColour()
+                ? films[region].colour
                 : inactiveMapColour;
         }
         return colours;
