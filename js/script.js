@@ -49,15 +49,15 @@ $(function () {
         _films = {};
 
         $.getJSON("data/films.json", function (filmsArray) {
+            for (let i = 0; i < filmsArray.length; i++) {
+                let film = filmsArray[i];
+                film.colour = getRandomActiveMapColour();
+                _films[film.countryCode] = film;
+            }
             _filmsArraySorted = filmsArray.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
                     (a.country > b.country) ? 1 : 0;
             });
-            for (let i = 0; i < _filmsArraySorted.length; i++) {
-                let film = _filmsArraySorted[i];
-                film.colour = getRandomActiveMapColour();
-                _films[film.countryCode] = film;
-            }
 
             onLoaded();
         });
@@ -101,7 +101,9 @@ $(function () {
             $("#list").append(
                 $("<span></span>")
                     .addClass("listFilm")
-                    .prop("style", "background-color: " + film.colour)
+                    .prop({
+                        style: "background-color: " + film.colour
+                    })
                     .text(film.country)
                     .click(function(){
                         showFilmDetails(film.countryCode);
@@ -153,47 +155,65 @@ $(function () {
         $("#filmTitle").text(film.title);
         $("#filmYear").text(film.year);
         $("#filmCountryFlag")
-            .prop("src", "https://flagpedia.net/data/flags/vector/" + film.countryCode.toLowerCase() + ".svg")
-            .prop("alt", "National flag of " + film.country);
+            .prop({
+                src: "https://flagpedia.net/data/flags/vector/" + film.countryCode.toLowerCase() + ".svg",
+                alt: "National flag of " + film.country
+            });
 
         $("#filmImageContainer")
-            .toggleClass("defaultImage", film.image == null);
+            .toggleClass("defaultImage", !film.image);
         $("#filmImage")
-            .prop("src", film.image)
-            .prop("alt", "Film poster for " + film.title)
-            .toggle(film.image != null);
+            .prop({
+                src: film.image,
+                alt: "Film poster for " + film.title
+            })
+            .toggle(!!film.image);
 
         $("#filmOriginalTitle")
             .text(film.originalTitle)
-            .toggle(film.originalTitle != null);
+            .toggle(!!film.originalTitle);
 
         $("#imdbLink")
-            .prop("href", "https://www.imdb.com/title/" + film.imdb + "/")
-            .toggle(film.imdb != null);
+            .prop({
+                href: "https://www.imdb.com/title/" + film.imdb + "/"
+            })
+            .toggle(!!film.imdb);
 
         $("#letterboxdLink")
-            .prop("href", "https://letterboxd.com/film/" + film.letterboxd + "/")
-            .toggle(film.letterboxd != null);
+            .prop({
+                href: "https://letterboxd.com/film/" + film.letterboxd + "/"
+            })
+            .toggle(!!film.letterboxd);
 
         $("#rottenTomatoesLink")
-            .prop("href", "https://www.rottentomatoes.com/m/" + film.rottenTomatoes)
-            .toggle(film.rottenTomatoes != null);
+            .prop({
+                href: "https://www.rottentomatoes.com/m/" + film.rottenTomatoes
+            })
+            .toggle(!!film.rottenTomatoes);
 
         $("#wikipediaLink")
-            .prop("href", "https://en.wikipedia.org/wiki/" + film.wikipedia)
-            .toggle(film.wikipedia != null);
+            .prop({
+                href: "https://en.wikipedia.org/wiki/" + film.wikipedia
+            })
+            .toggle(!!film.wikipedia);
 
         $("#justwatchLink")
-            .prop("href", "https://www.justwatch.com/uk/movie/" + film.justwatch)
-            .toggle(film.justwatch != null);
+            .prop({
+                href: "https://www.justwatch.com/uk/movie/" + film.justwatch
+            })
+            .toggle(!!film.justwatch);
 
         $("#trailerLink")
-            .prop("href", "https://www.youtube.com/watch?v=" + film.trailer)
-            .toggle(film.trailer != null);
+            .prop({
+                href: "https://www.youtube.com/watch?v=" + film.trailer
+            })
+            .toggle(!!film.trailer);
 
         $("#reviewLink")
-            .prop("href", "https://www.youtube.com/watch?v=" + film.review)
-            .toggle(film.review != null);
+            .prop({
+                href: "https://www.youtube.com/watch?v=" + film.review
+            })
+            .toggle(!!film.review);
 
         $("#filmReviewer")
             .text(film.reviewer);
