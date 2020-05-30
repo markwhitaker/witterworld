@@ -1,8 +1,8 @@
 "use strict";
 
 $(function () {
-    const inactiveMapColour = "#555555";
-    const activeMapColours = [
+    const __inactiveMapColour = "#555555";
+    const __activeMapColours = [
         "#00CCFA",
         "#00C0EB",
         "#00B3DB",
@@ -10,9 +10,9 @@ $(function () {
         "#009ABD"
     ];
 
-    var map;
-    var filmsArraySorted = [];
-    var films = {};
+    var _map;
+    var _films = {};
+    var _filmsArraySorted = [];
 
     initialiseEventHandlers();
 
@@ -45,18 +45,18 @@ $(function () {
     }
 
     function loadData(onLoaded) {
-        filmsArraySorted = [];
-        films = {};
+        _filmsArraySorted = [];
+        _films = {};
 
         $.getJSON("data/films.json", function (filmsArray) {
-            filmsArraySorted = filmsArray.sort(function (a, b) {
+            _filmsArraySorted = filmsArray.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
                     (a.country > b.country) ? 1 : 0;
             });
-            for (let i = 0; i < filmsArraySorted.length; i++) {
-                let film = filmsArraySorted[i];
+            for (let i = 0; i < _filmsArraySorted.length; i++) {
+                let film = _filmsArraySorted[i];
                 film.colour = getRandomActiveMapColour();
-                films[film.countryCode] = film;
+                _films[film.countryCode] = film;
             }
 
             onLoaded();
@@ -64,7 +64,7 @@ $(function () {
     }
 
     function initialiseMap() {
-        map = new jvm.Map({
+        _map = new jvm.Map({
             map: "world_merc",
             container: $("#map"),
             backgroundColor: "#f0f0f0",
@@ -85,19 +85,19 @@ $(function () {
         });
 
         // Set map colours
-        map.series.regions[0].setValues(getMapColours());
+        _map.series.regions[0].setValues(getMapColours());
     }
 
     function uninitialiseMap() {
-        map.remove();
-        map = undefined;
+        _map.remove();
+        _map = undefined;
     }
 
     function initialiseList() {
         $("#list").empty();
 
-        for (let i = 0; i < filmsArraySorted.length; i++) {
-            let film = filmsArraySorted[i];
+        for (let i = 0; i < _filmsArraySorted.length; i++) {
+            let film = _filmsArraySorted[i];
             $("#list").append(
                 $("<span></span>")
                     .addClass("listFilm")
@@ -121,29 +121,29 @@ $(function () {
     function showList() {
         $("#btnShowList").addClass("selected");
         $("#listContainer").show();
-        uninitialiseMap();
 
+        uninitialiseMap();
         $("#btnShowMap").removeClass("selected");
         $("#mapContainer").hide();
     }
 
     function getMapColours() {
         var colours = {};
-        for (let region in map.regions) {
-            colours[region] = films[region]
-                ? films[region].colour
-                : inactiveMapColour;
+        for (let region in _map.regions) {
+            colours[region] = _films[region]
+                ? _films[region].colour
+                : __inactiveMapColour;
         }
         return colours;
     }
 
     function getRandomActiveMapColour() {
-        let index = Math.floor(Math.random() * activeMapColours.length);
-        return activeMapColours[index];
+        let index = Math.floor(Math.random() * __activeMapColours.length);
+        return __activeMapColours[index];
     }
 
     function showFilmDetails(countryCode) {
-        var film = films[countryCode];
+        var film = _films[countryCode];
 
         if (!film) {
             return;
