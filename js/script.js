@@ -1,6 +1,6 @@
 "use strict";
 
-$(function () {
+$(function() {
     const __inactiveMapColour = "#555555";
     const __activeMapColours = [
         "#00CCFA",
@@ -10,9 +10,9 @@ $(function () {
         "#009ABD"
     ];
 
-    var _map;
-    var _films = {};
-    var _filmsArraySorted = [];
+    let _map;
+    let _films = {};
+    let _filmsArraySorted = [];
 
     initialiseEventHandlers();
 
@@ -130,7 +130,7 @@ $(function () {
     }
 
     function getMapColours() {
-        var colours = {};
+        let colours = {};
         for (let region in _map.regions) {
             colours[region] = _films[region]
                 ? _films[region].colour
@@ -145,7 +145,7 @@ $(function () {
     }
 
     function showFilmDetails(countryCode) {
-        var film = _films[countryCode];
+        let film = _films[countryCode];
 
         if (!film) {
             return;
