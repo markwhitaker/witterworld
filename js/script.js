@@ -1,24 +1,24 @@
 "use strict";
 
 $(function () {
-    const __mapBackgroundColour = "#f0f0f0";
-    const __inactiveMapColour = "#555555";
-    const __activeMapColours = [
+    const MAP_BACKGROUND_COLOUR = "#f0f0f0";
+    const INACTIVE_MAP_COLOUR = "#555555";
+    const ACTIVE_MAP_COLOURS = [
         "#00CCFA",
         "#00C0EB",
         "#00B3DB",
         "#00A7CC",
         "#009ABD"
     ];
-    const __altTextFlag = "National flag of {0}";
-    const __altTextPoster = "Film poster for {0}";
-    const __urlFlag = "https://flagpedia.net/data/flags/vector/{0}.svg";
-    const __urlImdb = "https://www.imdb.com/title/{0}/";
-    const __urlJustWatch = "https://www.justwatch.com/uk/movie/{0}";
-    const __urlLetterboxd = "https://letterboxd.com/film/{0}/";
-    const __urlRottenTomatoes = "https://www.rottentomatoes.com/m/{0}";
-    const __urlWikipedia = "https://en.wikipedia.org/wiki/{0}";
-    const __urlYouTube = "https://www.youtube.com/watch?v={0}";
+    const ALT_TEXT_FLAG = "National flag of {0}";
+    const ALT_TEXT_POSTER = "Film poster for {0}";
+    const URL_FLAG = "https://flagpedia.net/data/flags/vector/{0}.svg";
+    const URL_IMDB = "https://www.imdb.com/title/{0}/";
+    const URL_JUST_WATCH = "https://www.justwatch.com/uk/movie/{0}";
+    const URL_LETTERBOXD = "https://letterboxd.com/film/{0}/";
+    const URL_ROTTEN_TOMATOES = "https://www.rottentomatoes.com/m/{0}";
+    const URL_WIKIPEDIA = "https://en.wikipedia.org/wiki/{0}";
+    const URL_YOUTUBE = "https://www.youtube.com/watch?v={0}";
 
     let _map;
     let _films = {};
@@ -77,7 +77,7 @@ $(function () {
         _map = new jvm.Map({
             map: "world_merc",
             container: $("#map"),
-            backgroundColor: __mapBackgroundColour,
+            backgroundColor: MAP_BACKGROUND_COLOUR,
             zoomMin: 0.9,
             focusOn: {
                 x: 0.5,
@@ -144,14 +144,14 @@ $(function () {
         for (let region in _map.regions) {
             colours[region] = _films[region]
                 ? _films[region].colour
-                : __inactiveMapColour;
+                : INACTIVE_MAP_COLOUR;
         }
         return colours;
     }
 
     function getRandomActiveMapColour() {
-        let index = Math.floor(Math.random() * __activeMapColours.length);
-        return __activeMapColours[index];
+        let index = Math.floor(Math.random() * ACTIVE_MAP_COLOURS.length);
+        return ACTIVE_MAP_COLOURS[index];
     }
 
     function showFilmDetails(countryCode) {
@@ -166,8 +166,8 @@ $(function () {
         $("#filmYear").text(film.year);
         $("#filmCountryFlag")
             .prop({
-                src: __urlFlag.format(film.countryCode.toLowerCase()),
-                alt: __altTextFlag.format(film.country)
+                src: URL_FLAG.format(film.countryCode.toLowerCase()),
+                alt: ALT_TEXT_FLAG.format(film.country)
             });
 
         $("#filmImageContainer")
@@ -175,7 +175,7 @@ $(function () {
         $("#filmImage")
             .prop({
                 src: film.image,
-                alt: __altTextPoster.format(film.title)
+                alt: ALT_TEXT_POSTER.format(film.title)
             })
             .toggle(!!film.image);
 
@@ -185,43 +185,43 @@ $(function () {
 
         $("#imdbLink")
             .prop({
-                href: __urlImdb.format(film.imdb)
+                href: URL_IMDB.format(film.imdb)
             })
             .toggle(!!film.imdb);
 
         $("#letterboxdLink")
             .prop({
-                href: __urlLetterboxd.format(film.letterboxd)
+                href: URL_LETTERBOXD.format(film.letterboxd)
             })
             .toggle(!!film.letterboxd);
 
         $("#rottenTomatoesLink")
             .prop({
-                href: __urlRottenTomatoes.format(film.rottenTomatoes)
+                href: URL_ROTTEN_TOMATOES.format(film.rottenTomatoes)
             })
             .toggle(!!film.rottenTomatoes);
 
         $("#wikipediaLink")
             .prop({
-                href: __urlWikipedia.format(film.wikipedia)
+                href: URL_WIKIPEDIA.format(film.wikipedia)
             })
             .toggle(!!film.wikipedia);
 
         $("#justwatchLink")
             .prop({
-                href: __urlJustWatch.format(film.justwatch)
+                href: URL_JUST_WATCH.format(film.justwatch)
             })
             .toggle(!!film.justwatch);
 
         $("#trailerLink")
             .prop({
-                href: __urlYouTube.format(film.trailer)
+                href: URL_YOUTUBE.format(film.trailer)
             })
             .toggle(!!film.trailer);
 
         $("#reviewLink")
             .prop({
-                href: __urlYouTube.format(film.review)
+                href: URL_YOUTUBE.format(film.review)
             })
             .toggle(!!film.review);
 
