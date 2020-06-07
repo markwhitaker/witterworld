@@ -1,6 +1,7 @@
 "use strict";
 
-$(function() {
+$(function () {
+    const __mapBackgroundColour = "#f0f0f0";
     const __inactiveMapColour = "#555555";
     const __activeMapColours = [
         "#00CCFA",
@@ -9,6 +10,15 @@ $(function() {
         "#00A7CC",
         "#009ABD"
     ];
+    const __altTextFlag = "National flag of {0}";
+    const __altTextPoster = "Film poster for {0}";
+    const __urlFlag = "https://flagpedia.net/data/flags/vector/{0}.svg";
+    const __urlImdb = "https://www.imdb.com/title/{0}/";
+    const __urlJustWatch = "https://www.justwatch.com/uk/movie/{0}";
+    const __urlLetterboxd = "https://letterboxd.com/film/{0}/";
+    const __urlRottenTomatoes = "https://www.rottentomatoes.com/m/{0}";
+    const __urlWikipedia = "https://en.wikipedia.org/wiki/{0}";
+    const __urlYouTube = "https://www.youtube.com/watch?v={0}";
 
     let _map;
     let _films = {};
@@ -67,7 +77,7 @@ $(function() {
         _map = new jvm.Map({
             map: "world_merc",
             container: $("#map"),
-            backgroundColor: "#f0f0f0",
+            backgroundColor: __mapBackgroundColour,
             zoomMin: 0.9,
             focusOn: {
                 x: 0.5,
@@ -156,8 +166,8 @@ $(function() {
         $("#filmYear").text(film.year);
         $("#filmCountryFlag")
             .prop({
-                src: "https://flagpedia.net/data/flags/vector/" + film.countryCode.toLowerCase() + ".svg",
-                alt: "National flag of " + film.country
+                src: __urlFlag.format(film.countryCode.toLowerCase()),
+                alt: __altTextFlag.format(film.country)
             });
 
         $("#filmImageContainer")
@@ -165,7 +175,7 @@ $(function() {
         $("#filmImage")
             .prop({
                 src: film.image,
-                alt: "Film poster for " + film.title
+                alt: __altTextPoster.format(film.title)
             })
             .toggle(!!film.image);
 
@@ -175,43 +185,43 @@ $(function() {
 
         $("#imdbLink")
             .prop({
-                href: "https://www.imdb.com/title/" + film.imdb + "/"
+                href: __urlImdb.format(film.imdb)
             })
             .toggle(!!film.imdb);
 
         $("#letterboxdLink")
             .prop({
-                href: "https://letterboxd.com/film/" + film.letterboxd + "/"
+                href: __urlLetterboxd.format(film.letterboxd)
             })
             .toggle(!!film.letterboxd);
 
         $("#rottenTomatoesLink")
             .prop({
-                href: "https://www.rottentomatoes.com/m/" + film.rottenTomatoes
+                href: __urlRottenTomatoes.format(film.rottenTomatoes)
             })
             .toggle(!!film.rottenTomatoes);
 
         $("#wikipediaLink")
             .prop({
-                href: "https://en.wikipedia.org/wiki/" + film.wikipedia
+                href: __urlWikipedia.format(film.wikipedia)
             })
             .toggle(!!film.wikipedia);
 
         $("#justwatchLink")
             .prop({
-                href: "https://www.justwatch.com/uk/movie/" + film.justwatch
+                href: __urlJustWatch.format(film.justwatch)
             })
             .toggle(!!film.justwatch);
 
         $("#trailerLink")
             .prop({
-                href: "https://www.youtube.com/watch?v=" + film.trailer
+                href: __urlYouTube.format(film.trailer)
             })
             .toggle(!!film.trailer);
 
         $("#reviewLink")
             .prop({
-                href: "https://www.youtube.com/watch?v=" + film.review
+                href: __urlYouTube.format(film.review)
             })
             .toggle(!!film.review);
 
@@ -219,5 +229,9 @@ $(function() {
             .text(film.reviewer);
 
         $("#filmDetailsModal").modal();
+    }
+
+    String.prototype.format = function (value) {
+        return this.replace("{0}", value);
     }
 });
