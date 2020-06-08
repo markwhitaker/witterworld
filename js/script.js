@@ -10,15 +10,19 @@ $(function () {
         "#00A7CC",
         "#009ABD"
     ];
-    const ALT_TEXT_FLAG = "National flag of {0}";
-    const ALT_TEXT_POSTER = "Film poster for {0}";
-    const URL_FLAG = "https://flagpedia.net/data/flags/vector/{0}.svg";
-    const URL_IMDB = "https://www.imdb.com/title/{0}/";
-    const URL_JUST_WATCH = "https://www.justwatch.com/uk/movie/{0}";
-    const URL_LETTERBOXD = "https://letterboxd.com/film/{0}/";
-    const URL_ROTTEN_TOMATOES = "https://www.rottentomatoes.com/m/{0}";
-    const URL_WIKIPEDIA = "https://en.wikipedia.org/wiki/{0}";
-    const URL_YOUTUBE = "https://www.youtube.com/watch?v={0}";
+    const ALT_TEXTS = {
+        FLAG: "National flag of {0}",
+        POSTER: "Film poster for {0}"
+    };
+    const URLS = {
+        FLAG: "https://flagpedia.net/data/flags/vector/{0}.svg",
+        IMDB: "https://www.imdb.com/title/{0}/",
+        JUST_WATCH: "https://www.justwatch.com/uk/movie/{0}",
+        LETTERBOXD: "https://letterboxd.com/film/{0}/",
+        ROTTEN_TOMATOES: "https://www.rottentomatoes.com/m/{0}",
+        WIKIPEDIA: "https://en.wikipedia.org/wiki/{0}",
+        YOUTUBE: "https://www.youtube.com/watch?v={0}"
+    };
 
     let _map;
     let _films = {};
@@ -166,8 +170,8 @@ $(function () {
         $("#filmYear").text(film.year);
         $("#filmCountryFlag")
             .prop({
-                src: URL_FLAG.format(film.countryCode.toLowerCase()),
-                alt: ALT_TEXT_FLAG.format(film.country)
+                src: URLS.FLAG.format(film.countryCode.toLowerCase()),
+                alt: ALT_TEXTS.FLAG.format(film.country)
             });
 
         $("#filmImageContainer")
@@ -175,7 +179,7 @@ $(function () {
         $("#filmImage")
             .prop({
                 src: film.image,
-                alt: ALT_TEXT_POSTER.format(film.title)
+                alt: ALT_TEXTS.POSTER.format(film.title)
             })
             .toggle(!!film.image);
 
@@ -185,43 +189,43 @@ $(function () {
 
         $("#imdbLink")
             .prop({
-                href: URL_IMDB.format(film.imdb)
+                href: URLS.IMDB.format(film.imdb)
             })
             .toggle(!!film.imdb);
 
         $("#letterboxdLink")
             .prop({
-                href: URL_LETTERBOXD.format(film.letterboxd)
+                href: URLS.LETTERBOXD.format(film.letterboxd)
             })
             .toggle(!!film.letterboxd);
 
         $("#rottenTomatoesLink")
             .prop({
-                href: URL_ROTTEN_TOMATOES.format(film.rottenTomatoes)
+                href: URLS.ROTTEN_TOMATOES.format(film.rottenTomatoes)
             })
             .toggle(!!film.rottenTomatoes);
 
         $("#wikipediaLink")
             .prop({
-                href: URL_WIKIPEDIA.format(film.wikipedia)
+                href: URLS.WIKIPEDIA.format(film.wikipedia)
             })
             .toggle(!!film.wikipedia);
 
         $("#justwatchLink")
             .prop({
-                href: URL_JUST_WATCH.format(film.justwatch)
+                href: URLS.JUST_WATCH.format(film.justwatch)
             })
             .toggle(!!film.justwatch);
 
         $("#trailerLink")
             .prop({
-                href: URL_YOUTUBE.format(film.trailer)
+                href: URLS.YOUTUBE.format(film.trailer)
             })
             .toggle(!!film.trailer);
 
         $("#reviewLink")
             .prop({
-                href: URL_YOUTUBE.format(film.review)
+                href: URLS.YOUTUBE.format(film.review)
             })
             .toggle(!!film.review);
 
