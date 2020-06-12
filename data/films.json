@@ -430,5 +430,53 @@
     "rottenTomatoes": "hedd_wyn",
     "reviewer": null,
     "review": null
+  },
+  {
+    "countryCode": "KP",
+    "country": "North Korea",
+    "title": "Comrade Kim Goes Flying",
+    "originalTitle": null,
+    "year": 2012,
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9a/Comrade_Kim_Goes_Flying_%28film%29.jpg",
+    "letterboxd": "comrade-kim-goes-flying",
+    "imdb": "tt2379424",
+    "justwatch": null,
+    "wikipedia": "Comrade_Kim_Goes_Flying",
+    "trailer": "J6VQbagojN0",
+    "rottenTomatoes": "comrade_kim_goes_flying",
+    "reviewer": null,
+    "review": null
+  },
+  {
+    "countryCode": "BT",
+    "country": "Bhutan",
+    "title": "Super Star",
+    "originalTitle": null,
+    "year": 2019,
+    "image": "https://i1.sndcdn.com/artworks-000518351394-0ufyfj-t500x500.jpg",
+    "letterboxd": null,
+    "imdb": null,
+    "justwatch": null,
+    "wikipedia": null,
+    "trailer": "HSHQ3s6XpjM",
+    "rottenTomatoes": null,
+    "reviewer": null,
+    "review": null
+  },
+  {
+    "countryCode": "FI",
+    "country": "Finland",
+    "title": "The Unknown Soldier",
+    "originalTitle": "Tuntematon sotilas",
+    "year": 2017,
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a2/Tuntematon_sotilas_2017_poster.jpg",
+    "letterboxd": "unknown-soldier-2017",
+    "imdb": "tt4065552",
+    "justwatch": "the-unknown-soldier",
+    "wikipedia": "The_Unknown_Soldier_(2017_film)",
+    "trailer": "NTYesNj_sBg",
+    "rottenTomatoes": "the_unknown_soldier_2017",
+    "reviewer": null,
+    "review": null
   }
 ]
