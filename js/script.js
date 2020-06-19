@@ -30,7 +30,8 @@ $(function () {
 
     initialiseEventHandlers();
 
-    loadData(function() {
+    loadData(function () {
+        initialiseCount();
         initialiseMap();
         initialiseList();
     });
@@ -123,6 +124,32 @@ $(function () {
                         showFilmDetails(film.countryCode);
                     }));
         }
+    }
+
+    function initialiseCount() {
+        animateWithDeceleration(1, _filmsArraySorted.length,
+            function (val) {
+                $("#filmCount").text(val);
+            },
+            function () {
+                $("#filmCount").addClass("done");
+            });
+    }
+
+    function animateWithDeceleration(min, max, tickCallback, doneCallback) {
+        let delayMs = 20;
+        let fn = function (i) {
+            tickCallback(i);
+            delayMs = (i < (max - 10)) ? delayMs : delayMs * 1.3;
+            if (i < max) {
+                setTimeout(function () {
+                    fn(i + 1)
+                }, delayMs);
+            } else {
+                doneCallback();
+            }
+        };
+        fn(min);
     }
 
     function showMap() {
