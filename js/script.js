@@ -4,11 +4,11 @@ $(function () {
     const MAP_BACKGROUND_COLOUR = "#f0f0f0";
     const INACTIVE_MAP_COLOUR = "#555555";
     const ACTIVE_MAP_COLOURS = [
-        "#00CCFA",
-        "#00C0EB",
+        "#00C4F0",
+        "#00BCE5",
         "#00B3DB",
-        "#00A7CC",
-        "#009ABD"
+        "#00ABD1",
+        "#00A3C7"
     ];
     const ALT_TEXTS = {
         FLAG: "National flag of {0}",
