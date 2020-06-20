@@ -95,6 +95,12 @@ $(function () {
             },
             onRegionClick: function (_, countryCode) {
                 showFilmDetails(countryCode);
+            },
+            onRegionTipShow: function(_, tip, code) {
+                let film = _films[code];
+                if (film) {
+                    tip.text("{0}: {1} ({2})".format(film.country, film.title, film.year));
+                }
             }
         });
 
