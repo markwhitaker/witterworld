@@ -117,7 +117,8 @@ $(function () {
                 $("<span></span>")
                     .addClass("listFilm")
                     .prop({
-                        style: "background-color: " + film.colour
+                        title: "{0} ({1})".format(film.title, film.year),
+                        style: "background-color: {0}".format(film.colour)
                     })
                     .text(film.country)
                     .click(function(){
@@ -262,7 +263,11 @@ $(function () {
         $("#filmDetailsModal").modal();
     }
 
-    String.prototype.format = function (value) {
-        return this.replace("{0}", value);
+    String.prototype.format = function () {
+        let formatted = this;
+        for (let i = 0; i < arguments.length; i++) {
+            formatted = formatted.replace("{" + i + "}", arguments[i]);
+        }
+        return formatted;
     }
 });
