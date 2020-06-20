@@ -219,52 +219,26 @@ $(function () {
             .text(film.originalTitle)
             .toggle(!!film.originalTitle);
 
-        $("#imdbLink")
-            .prop({
-                href: URLS.IMDB.format(film.imdb)
-            })
-            .toggle(!!film.imdb);
-
-        $("#letterboxdLink")
-            .prop({
-                href: URLS.LETTERBOXD.format(film.letterboxd)
-            })
-            .toggle(!!film.letterboxd);
-
-        $("#rottenTomatoesLink")
-            .prop({
-                href: URLS.ROTTEN_TOMATOES.format(film.rottenTomatoes)
-            })
-            .toggle(!!film.rottenTomatoes);
-
-        $("#wikipediaLink")
-            .prop({
-                href: URLS.WIKIPEDIA.format(film.wikipedia)
-            })
-            .toggle(!!film.wikipedia);
-
-        $("#justwatchLink")
-            .prop({
-                href: URLS.JUST_WATCH.format(film.justwatch)
-            })
-            .toggle(!!film.justwatch);
-
-        $("#trailerLink")
-            .prop({
-                href: URLS.YOUTUBE.format(film.trailer)
-            })
-            .toggle(!!film.trailer);
-
-        $("#reviewLink")
-            .prop({
-                href: URLS.YOUTUBE.format(film.review)
-            })
-            .toggle(!!film.review);
+        setupButton("#imdbLink", URLS.IMDB, film.imdb);
+        setupButton("#letterboxdLink", URLS.LETTERBOXD, film.letterboxd);
+        setupButton("#rottenTomatoesLink", URLS.ROTTEN_TOMATOES, film.rottenTomatoes);
+        setupButton("#wikipediaLink", URLS.WIKIPEDIA, film.wikipedia);
+        setupButton("#justwatchLink", URLS.JUST_WATCH, film.justwatch);
+        setupButton("#trailerLink", URLS.YOUTUBE, film.trailer);
+        setupButton("#reviewLink", URLS.YOUTUBE, film.review);
 
         $("#filmReviewer")
             .text(film.reviewer);
 
         $("#filmDetailsModal").modal();
+    }
+
+    function setupButton(selector, url, value) {
+        $(selector)
+            .prop({
+                href: url.format(value)
+            })
+            .toggle(!!value);
     }
 
     String.prototype.format = function () {
