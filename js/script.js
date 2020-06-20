@@ -139,12 +139,12 @@ $(function () {
 
     function animateWithDeceleration(min, max, tickCallback, doneCallback) {
         let delayMs = 20;
-        let fn = function (i) {
-            tickCallback(i);
-            delayMs = (i < (max - 10)) ? delayMs : delayMs * 1.3;
-            if (i < max) {
+        let fn = function (val) {
+            tickCallback(val);
+            if (val < max) {
+                delayMs *= (val < (max - 10)) ? 1 : 1.3;
                 setTimeout(function () {
-                    fn(i + 1)
+                    fn(val + 1)
                 }, delayMs);
             } else {
                 doneCallback();
