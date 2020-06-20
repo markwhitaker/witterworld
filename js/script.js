@@ -64,11 +64,10 @@ $(function () {
         _films = {};
 
         $.getJSON("data/films.json", function (filmsArray) {
-            for (let i = 0; i < filmsArray.length; i++) {
-                let film = filmsArray[i];
+            filmsArray.forEach(function (film) {
                 film.colour = getRandomActiveMapColour();
                 _films[film.countryCode] = film;
-            }
+            });
             _filmsArraySorted = filmsArray.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
                     (a.country > b.country) ? 1 : 0;
@@ -111,20 +110,19 @@ $(function () {
     function initialiseList() {
         $("#list").empty();
 
-        for (let i = 0; i < _filmsArraySorted.length; i++) {
-            let film = _filmsArraySorted[i];
-            $("#list").append(
-                $("<span></span>")
-                    .addClass("listFilm")
-                    .prop({
-                        title: "{0} ({1})".format(film.title, film.year),
-                        style: "background-color: {0}".format(film.colour)
-                    })
-                    .text(film.country)
-                    .click(function(){
-                        showFilmDetails(film.countryCode);
-                    }));
-        }
+        _filmsArraySorted.forEach(function(film){
+            $("<span></span>")
+                .addClass("listFilm")
+                .prop({
+                    title: "{0} ({1})".format(film.title, film.year),
+                    style: "background-color: {0}".format(film.colour)
+                })
+                .text(film.country)
+                .click(function(){
+                    showFilmDetails(film.countryCode);
+                })
+                .appendTo("#list");
+            });
     }
 
     function initialiseCount() {
