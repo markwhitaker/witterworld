@@ -8,7 +8,7 @@ Full source code for the [Wittertainment World Map of Cinema](https://witterworl
 
 ## How do I build it?
 
-You just build it.
+[You just build it](https://witterpedia.net/wiki/index.php/How_do_you...%3F_You_just...!).
 
 I use [Microsoft Visual Studio Code](https://code.visualstudio.com/) with these extensions:
 - [JS & CSS Minifier (Minify)](https://marketplace.visualstudio.com/items?itemName=olback.es6-css-minify)
