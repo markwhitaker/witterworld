@@ -542,5 +542,37 @@
     "rottenTomatoes": "amandla_a_revolution_in_four_part_harmony",
     "reviewer": null,
     "review": null
+  },
+  {
+    "countryCode": "ES",
+    "country": "Spain",
+    "title": "The Spirit of the Beehive",
+    "originalTitle": "El espíritu de la colmena",
+    "year": 1973,
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/32/Spiritofthebeehiveposter.jpg",
+    "letterboxd": "the-spirit-of-the-beehive",
+    "imdb": "tt0070040",
+    "justwatch": "the-spirit-of-the-beehive",
+    "wikipedia": "The_Spirit_of_the_Beehive",
+    "trailer": "aqvpMJNlqxE",
+    "rottenTomatoes": "spirit_of_the_beehive",
+    "reviewer": null,
+    "review": null
+  },
+  {
+    "countryCode": "GR",
+    "country": "Greece",
+    "title": "Dogtooth",
+    "originalTitle": "Κυνόδοντας",
+    "year": 2009,
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a8/Dogtooth%282009%29_poster.jpg",
+    "letterboxd": "dogtooth",
+    "imdb": "tt1379182",
+    "justwatch": "dogtooth",
+    "wikipedia": "Dogtooth_(film)",
+    "trailer": "ElVysSnB3yg",
+    "rottenTomatoes": "dogtooth",
+    "reviewer": "Mark",
+    "review": "6u5KaHrj8AY"
   }
 ]
