@@ -638,5 +638,37 @@
     "rottenTomatoes": "pather_panchali",
     "reviewer": null,
     "review": null
+  },
+  {
+    "countryCode": "BE",
+    "country": "Belgium",
+    "title": "Man Bites Dog",
+    "originalTitle": "C'est arrivé près de chez vous",
+    "year": 1992,
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/ba/Man_Bites_Dog_-_censored_poster.jpg",
+    "letterboxd": "man-bites-dog",
+    "imdb": "tt0103905",
+    "justwatch": "man-bites-dog",
+    "wikipedia": "Man_Bites_Dog_(film)",
+    "trailer": "SwRxZlTGbjU",
+    "rottenTomatoes": "man_bites_dog",
+    "reviewer": "Mark",
+    "review": "1rIUchX1ZX4"
+  },
+  {
+    "countryCode": "BW",
+    "country": "Botswana",
+    "title": "The Gods Must Be Crazy",
+    "originalTitle": null,
+    "year": 1980,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/59/Gods_must_be_crazyposter.jpg",
+    "letterboxd": "the-gods-must-be-crazy",
+    "imdb": "tt0080801",
+    "justwatch": "the-gods-must-be-crazy",
+    "wikipedia": "The_Gods_Must_Be_Crazy",
+    "trailer": "xo7Q6DDrQS0",
+    "rottenTomatoes": "gods_must_be_crazy",
+    "reviewer": null,
+    "review": null
   }
 ]
