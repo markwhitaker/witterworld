@@ -50,10 +50,10 @@ $(function () {
         });
 
         $('#filmCountryFlag').on({
-            "error": function () {
+            error: function () {
                 $(this).hide();
             },
-            "load": function () {
+            load: function () {
                 $(this).show();
             }
         });
