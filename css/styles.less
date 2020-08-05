@@ -8,6 +8,8 @@
 @colour-light-grey: #f0f0f0;
 @colour-dark-grey: #909090;
 @colour-black: #000000;
+@colour-yellow: #FFB100;
+@colour-light-yellow: #FFEEBA;
 
 // Font families
 @font-family-default: Raleway, Arial, Helvetica, sans-serif;
@@ -37,6 +39,7 @@
 @list-min-height: 400px;
 @about-min-height: 400px;
 @site-icon-size: 120px;
+@tshirt-icon-size: 120px;
 @film-image-width: 200px;
 @film-image-height: 250px;
 
@@ -142,31 +145,59 @@ body {
 }
 
 #suggestFilm {
-    background-color: @colour-light-blue;
+    background-color: @colour-light-grey;
+    border-radius: @padding-small;
+    padding: @padding-medium @padding-large;
+
+    & > * {
+        display: inline-block;
+        font-size: @font-size-regular;
+        margin: 0;
+    }
+
+    h5 {
+        font-weight: @font-weight-black;
+        text-transform: uppercase;
+        margin-right: @padding-small;
+    }
+}
+
+#buyMerch {
+    background-color: @colour-light-yellow;
     border-radius: @padding-medium;
+    position: relative;
+    min-height: @tshirt-icon-size + (@padding-medium * 2);
+    margin-bottom: @padding-large;
+
+    & > * {
+        padding: @padding-medium @padding-large @padding-medium (@tshirt-icon-size + (@padding-medium * 2));
+    }
 
     h5 {
         font-size: @font-size-xlarge;
         font-weight: @font-weight-black;
         text-transform: uppercase;
-        background-color: @colour-blue;
+        background-color: @colour-yellow;
         color: @colour-white;
         border-radius: @padding-medium @padding-medium 0 0;
         margin: 0;
     }
 
-    & > * {
-        padding: @padding-medium @padding-large;
+    #tshirtIcon {
+        background-image: url(/images/tshirt.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        left: @padding-medium;
+        top: @padding-small;
+        height: @tshirt-icon-size;
+        width: @tshirt-icon-size;
+        transform: rotate(-10deg);
+        filter: drop-shadow(10px, 10px, 10px, white);
     }
 }
 
 #topContent {
     margin-bottom: @padding-xlarge;
-}
-#description {
-    p {
-        margin-bottom: @padding-medium;
-    }
 }
 
 #filmImageContainer {
