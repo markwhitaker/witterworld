@@ -56,26 +56,52 @@
   </div>
 
   <!-- Map/list buttons -->
-  <div class="container" id="mapListButtons">
+  <div class="container" id="sectionTabs">
     <button type="button" id="btnShowMap" class="selected">Map</button>
     <button type="button" id="btnShowList">List</button>
+    <button type="button" id="btnShowAbout">About</button>
   </div>
 
   <!-- Map -->
-  <div class="container-fluid" id="mapContainer">
-    <div id="map"></div>
-  </div>
+  <div id="sections">
+    <div class="container-fluid section" id="sectionMap">
+      <div id="map"></div>
+    </div>
 
-  <!-- List -->
-  <div class="container-fluid" id="listContainer" style="display: none;">
-    <div class="container content">
-      <div class="row">
-        <div class="col-md-12">
-          <div id="listIntroduction">
-            Some countries don’t appear on the map, either because they’re <a href="https://www.youtube.com/watch?v=1lfqvof8czw">not really countries</a>
-            or because they’re very small. Sorry about that. <strong>This</strong> is the full list.
+    <!-- List -->
+    <div class="container-fluid section" id="sectionList" style="display: none;">
+      <div class="container content">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="listIntroduction">
+              Some countries don’t appear on the map, either because they’re <a href="https://www.youtube.com/watch?v=1lfqvof8czw">not really countries</a>
+              or because they’re very small. Sorry about that. <strong>This</strong> is the full list.
+            </div>
+            <div id="list"></div>
           </div>
-          <div id="list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid section" id="sectionAbout" style="display: none;">
+      <div class="container content">
+        <div class="row">
+          <div class="col-md-9">
+            <div id="about">
+              <p>
+                I created this site in May 2020 to track a new feature on the <a href="https://www.bbc.co.uk/programmes/b00lvdrj">Kermode and Mayo's Film Review</a> show on BBC Radio 5 Live (known to its fans as <a href="http://www.witterpedia.net/wiki/index.php?title=Wittertainment">Wittertainment</a>).
+              </p>
+              <p>
+                A couple had emailed the show from New Zealand on 24 April <span class="listen">(<a href="https://www.bbc.co.uk/sounds/play/m000hhvv">listen here at 32:00</a>)</span>, saying they were aiming to watch a film from every country in the world and asking listeners for ideas from their home countries.
+              </p>
+              <p>
+                A couple of weeks later, on 15 May <span class="listen">(<a href="https://www.bbc.co.uk/sounds/play/m000j308">listen here at 25:55</a>)</span>, this site was announced to the world and gave the feature its name:
+              </p>
+              <p>
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/821222746&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

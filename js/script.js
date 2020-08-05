@@ -45,6 +45,10 @@ $(function () {
             showList();
         });
 
+        $("#btnShowAbout").click(function () {
+            showAbout();
+        });
+
         $('#filmCountryFlag').on({
             error: function () {
                 $(this).hide();
@@ -105,8 +109,10 @@ $(function () {
     }
 
     function uninitialiseMap() {
-        _map.remove();
-        _map = undefined;
+        if (_map) {
+            _map.remove();
+            _map = undefined;
+        }
     }
 
     function initialiseList() {
@@ -154,21 +160,35 @@ $(function () {
     }
 
     function showMap() {
-        $("#btnShowMap").addClass("selected");
-        $("#mapContainer").show();
+        selectButton("#btnShowMap");
+        selectSection("#sectionMap");
         initialiseMap();
-
-        $("#btnShowList").removeClass("selected");
-        $("#listContainer").hide();
     }
 
     function showList() {
-        $("#btnShowList").addClass("selected");
-        $("#listContainer").show();
-
+        selectButton("#btnShowList");
+        selectSection("#sectionList");
         uninitialiseMap();
-        $("#btnShowMap").removeClass("selected");
-        $("#mapContainer").hide();
+    }
+
+    function showAbout() {
+        selectButton("#btnShowAbout");
+        selectSection("#sectionAbout")
+        uninitialiseMap();
+    }
+
+    function selectButton(selector) {
+        $(selector)
+            .addClass("selected")
+            .siblings()
+            .removeClass("selected");
+    }
+
+    function selectSection(selector) {
+        $(selector)
+            .show()
+            .siblings()
+            .hide();
     }
 
     function getMapColours() {

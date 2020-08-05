@@ -35,6 +35,7 @@
 @padding-xxxlarge: 50px;
 @map-height: 600px;
 @list-min-height: 400px;
+@about-min-height: 400px;
 @site-icon-size: 120px;
 @film-image-width: 200px;
 @film-image-height: 250px;
@@ -47,8 +48,7 @@ body {
     font-size: @font-size-regular;
 }
 
-#mapContainer,
-#listContainer {
+.section {
     background-color: @colour-light-grey;
 }
 
@@ -77,8 +77,17 @@ body {
 
 #listIntroduction {
     font-size: @font-size-small;
-    margin-top: @padding-medium;
+    margin-top: @padding-large;
     margin-bottom: @padding-medium;
+}
+
+#about {
+    min-height: @about-min-height;
+    padding: @padding-large 0;
+
+    .listen {
+        font-size: @font-size-small;
+    }
 }
 
 #filmCount {
@@ -286,7 +295,7 @@ body {
     }
 }
 
-#mapListButtons {
+#sectionTabs {
     button {
         border-width: @border-width @border-width 0 @border-width;
         border-style: solid;
@@ -299,5 +308,9 @@ body {
         &.selected {
             background-color: @colour-light-grey;
         }
+    }
+
+    #btnShowAbout {
+        float: right;
     }
 }
