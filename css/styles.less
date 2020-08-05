@@ -36,8 +36,7 @@
 @padding-xlarge: 30px;
 @padding-xxxlarge: 50px;
 @map-height: 600px;
-@list-min-height: 400px;
-@about-min-height: 400px;
+@section-min-height: 450px;
 @site-icon-size: 120px;
 @tshirt-icon-size: 120px;
 @film-image-width: 200px;
@@ -53,16 +52,20 @@ body {
 
 .section {
     background-color: @colour-light-grey;
+    min-height: @section-min-height;
 }
 
 #map {
     height: @map-height;
 }
 
-#list {
-    min-height: @list-min-height;
-    padding: @padding-medium 0;
+#listIntroduction {
+    font-size: @font-size-small;
+    margin-top: @padding-large;
+    margin-bottom: @padding-large;
+}
 
+#list {
     .listFilm {
         display: inline-block;
         border-radius: @padding-small;
@@ -78,14 +81,7 @@ body {
     }
 }
 
-#listIntroduction {
-    font-size: @font-size-small;
-    margin-top: @padding-large;
-    margin-bottom: @padding-medium;
-}
-
 #about {
-    min-height: @about-min-height;
     padding: @padding-large 0;
 
     .listen {
@@ -193,6 +189,10 @@ body {
         width: @tshirt-icon-size;
         transform: rotate(-10deg);
         filter: drop-shadow(10px, 10px, 10px, white);
+    }
+
+    a:hover {
+        color: @colour-yellow;
     }
 }
 
