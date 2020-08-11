@@ -134,29 +134,7 @@ $(function () {
     }
 
     function initialiseCount() {
-        animateWithDeceleration(1, _filmsArraySorted.length,
-            function (val) {
-                $("#filmCount").text(val);
-            },
-            function () {
-                $("#filmCount").addClass("done");
-            });
-    }
-
-    function animateWithDeceleration(min, max, tickCallback, doneCallback) {
-        let delayMs = 20;
-        let fn = function (val) {
-            tickCallback(val);
-            if (val < max) {
-                delayMs *= (val < (max - 10)) ? 1 : 1.3;
-                setTimeout(function () {
-                    fn(val + 1)
-                }, delayMs);
-            } else {
-                doneCallback();
-            }
-        };
-        fn(min);
+        $("#filmCount").text(_filmsArraySorted.length);
     }
 
     function showMap() {
