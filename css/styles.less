@@ -10,6 +10,8 @@
 @colour-black: #000000;
 @colour-yellow: #FFB100;
 @colour-light-yellow: #FFEEBA;
+@colour-red: #D1001A;
+@colour-light-red: #FFD6DC;
 
 // Font families
 @font-family-default: Raleway, Arial, Helvetica, sans-serif;
@@ -41,6 +43,7 @@
 @tshirt-icon-size: 120px;
 @film-image-width: 200px;
 @film-image-height: 250px;
+@usa-icon-size: 50px;
 
 
 // -------------------------------
@@ -190,6 +193,30 @@ body {
 
     a:hover {
         color: @colour-yellow;
+    }
+}
+
+#witterworldUsa {
+    background-color: @colour-light-red;
+    border-radius: @padding-medium;
+    padding: @padding-large @padding-medium @padding-large (@usa-icon-size + (@padding-medium * 2));
+    margin-bottom: @padding-large;
+    min-height: @padding-xxxlarge;
+    background-image: url(https://usa.witterworld.com/images/icon.svg);
+    background-size: @usa-icon-size @usa-icon-size;
+    background-repeat: no-repeat;
+    background-position: @padding-medium;
+
+    #witterworldUsaIcon {
+        display: inline-block;
+        height: @usa-icon-size;
+        width: @usa-icon-size;
+        background-image: url(https://usa.witterworld.com/images/icon.svg);
+        background-size: @usa-icon-size @usa-icon-size;
+    }
+
+    a:hover {
+        color: @colour-red;
     }
 }
 
