@@ -12,7 +12,7 @@ $(function () {
     ];
     const ALT_TEXT_FLAG = "National flag of {0}";
     const ALT_TEXT_POSTER = "Film poster for {0}";
-    const URL_FLAG = "https://flagpedia.net/data/flags/vector/{0}.svg";
+    const URL_FLAG = "https://flagcdn.com/{0}.svg";
     const URL_IMDB = "https://www.imdb.com/title/{0}/";
     const URL_JUST_WATCH = "https://www.justwatch.com/uk/movie/{0}";
     const URL_LETTERBOXD = "https://letterboxd.com/film/{0}/";
