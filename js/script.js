@@ -128,29 +128,51 @@ $(function () {
     }
 
     function initialiseCountriesList() {
-        initialiseList("#listCountries", _filmsSortedByCountry, "country");
+        initialiseList(
+            "#listCountries",
+            _filmsSortedByCountry,
+            function(film) {
+                return film.country;
+            },
+            function (film) {
+                return "{0} ({1})".format(film.title, film.year);
+            });
     }
 
     function initialiseFilmsList() {
-        initialiseList("#listFilms", _filmsSortedByTitle, "title");
+        initialiseList(
+            "#listFilms",
+            _filmsSortedByTitle,
+            function (film) {
+                return "{0} ({1})".format(film.title, film.year);
+            },
+            function (film) {
+                return film.country;
+            });
     }
 
-    function initialiseList(elementId, array, prop) {
+    function initialiseList(elementId, array, textFunction, tipFunction) {
         $(elementId).empty();
 
         array.forEach(function(film){
             $("<span></span>")
                 .addClass("listFilm")
                 .prop({
-                    title: "{0} ({1})".format(film.title, film.year),
+                    title: tipFunction(film),
                     style: "background-color: {0}".format(film.colour)
                 })
-                .text(film[prop])
+                .text(textFunction(film))
                 .click(function(){
                     showFilmDetails(film.countryCode);
                 })
+                .prepend(
+                    $("<img/>").prop({
+                        src: URL_FLAG.format(film.countryCode.toLowerCase()),
+                        alt: ALT_TEXT_FLAG.format(film.country)
+                    })
+                )
                 .appendTo(elementId);
-            });
+        });
     }
 
     function initialiseCount() {
