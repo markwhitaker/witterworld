@@ -73,7 +73,8 @@
   <!-- Map/list buttons -->
   <div class="container" id="sectionTabs">
     <button type="button" id="btnShowMap" class="selected">Map</button>
-    <button type="button" id="btnShowList">List</button>
+    <button type="button" id="btnShowListCountries">Countries</button>
+    <button type="button" id="btnShowListFilms">Films</button>
     <button type="button" id="btnShowAbout">About</button>
   </div>
 
@@ -83,16 +84,30 @@
       <div id="map"></div>
     </div>
 
-    <!-- List -->
-    <div class="container-fluid section" id="sectionList" style="display: none;">
+    <!-- Countries -->
+    <div class="container-fluid section" id="sectionListCountries" style="display: none;">
       <div class="container content">
         <div class="row">
           <div class="col-md-12">
-            <div id="listIntroduction">
+            <div class="listIntroduction">
               Some countries don’t appear on the map, either because they’re <a href="https://www.youtube.com/watch?v=1lfqvof8czw">not really countries</a>
               or because they’re very small. Sorry about that. <strong>This</strong> is the full list.
             </div>
-            <div id="list"></div>
+            <div class="list" id="listCountries"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Movies -->
+    <div class="container-fluid section" id="sectionListFilms" style="display: none;">
+      <div class="container content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="listIntroduction">
+              Every film we&rsquo;ve watched so far...
+            </div>
+            <div class="list" id="listFilms"></div>
           </div>
         </div>
       </div>

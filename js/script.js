@@ -22,14 +22,16 @@ $(function () {
 
     let _map;
     let _films = {};
-    let _filmsArraySorted = [];
+    let _filmsSortedByCountry = [];
+    let _filmsSortedByTitle = [];
 
     initialiseEventHandlers();
 
     loadData(function () {
         initialiseCount();
         initialiseMap();
-        initialiseList();
+        initialiseCountriesList();
+        initialiseFilmsList();
     });
 
     //-----------------------------------------------------------
@@ -41,8 +43,12 @@ $(function () {
             showMap();
         });
 
-        $("#btnShowList").click(function () {
-            showList();
+        $("#btnShowListCountries").click(function () {
+            showListCountries();
+        });
+
+        $("#btnShowListFilms").click(function () {
+            showListFilms();
         });
 
         $("#btnShowAbout").click(function () {
@@ -60,7 +66,7 @@ $(function () {
     }
 
     function loadData(onLoaded) {
-        _filmsArraySorted = [];
+        _filmsSortedByCountry = [];
         _films = {};
 
         $.getJSON("data/films.json", function (filmsArray) {
@@ -68,9 +74,15 @@ $(function () {
                 film.colour = getRandomActiveMapColour();
                 _films[film.countryCode] = film;
             });
-            _filmsArraySorted = filmsArray.sort(function (a, b) {
+            _filmsSortedByCountry = filmsArray.sort(function (a, b) {
                 return (a.country < b.country) ? -1 :
                     (a.country > b.country) ? 1 : 0;
+            });
+            _filmsSortedByTitle = filmsArray.slice().sort(function (a, b) {
+                let aTitle = a.title.sortable();
+                let bTitle = b.title.sortable();
+                return (aTitle < bTitle) ? -1 :
+                    (aTitle > bTitle) ? 1 : 0;
             });
 
             onLoaded();
@@ -115,26 +127,34 @@ $(function () {
         }
     }
 
-    function initialiseList() {
-        $("#list").empty();
+    function initialiseCountriesList() {
+        initialiseList("#listCountries", _filmsSortedByCountry, "country");
+    }
 
-        _filmsArraySorted.forEach(function(film){
+    function initialiseFilmsList() {
+        initialiseList("#listFilms", _filmsSortedByTitle, "title");
+    }
+
+    function initialiseList(elementId, array, prop) {
+        $(elementId).empty();
+
+        array.forEach(function(film){
             $("<span></span>")
                 .addClass("listFilm")
                 .prop({
                     title: "{0} ({1})".format(film.title, film.year),
                     style: "background-color: {0}".format(film.colour)
                 })
-                .text(film.country)
+                .text(film[prop])
                 .click(function(){
                     showFilmDetails(film.countryCode);
                 })
-                .appendTo("#list");
+                .appendTo(elementId);
             });
     }
 
     function initialiseCount() {
-        $("#filmCount").text(_filmsArraySorted.length);
+        $("#filmCount").text(_filmsSortedByCountry.length);
     }
 
     function showMap() {
@@ -143,9 +163,15 @@ $(function () {
         initialiseMap();
     }
 
-    function showList() {
-        selectButton("#btnShowList");
-        selectSection("#sectionList");
+    function showListCountries() {
+        selectButton("#btnShowListCountries");
+        selectSection("#sectionListCountries");
+        uninitialiseMap();
+    }
+
+    function showListFilms() {
+        selectButton("#btnShowListFilms");
+        selectSection("#sectionListFilms");
         uninitialiseMap();
     }
 
@@ -241,5 +267,9 @@ $(function () {
             formatted = formatted.replace("{" + i + "}", arguments[i]);
         }
         return formatted;
+    }
+
+    String.prototype.sortable = function () {
+        return this.replace(/^(A|The) /, "");
     }
 });
