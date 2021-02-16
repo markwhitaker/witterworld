@@ -42,15 +42,12 @@ $(function () {
         $("#btnShowMap").click(function () {
             showMap();
         });
-
         $("#btnShowListCountries").click(function () {
             showListCountries();
         });
-
         $("#btnShowListFilms").click(function () {
             showListFilms();
         });
-
         $("#btnShowAbout").click(function () {
             showAbout();
         });
@@ -67,6 +64,7 @@ $(function () {
 
     function loadData(onLoaded) {
         _filmsSortedByCountry = [];
+        _filmsSortedByTitle = [];
         _films = {};
 
         $.getJSON("data/films.json", function (filmsArray) {
@@ -108,7 +106,7 @@ $(function () {
             onRegionClick: function (_, countryCode) {
                 showFilmDetails(countryCode);
             },
-            onRegionTipShow: function(_, tip, code) {
+            onRegionTipShow: function (_, tip, code) {
                 let film = _films[code];
                 if (film) {
                     tip.text("{0}: {1} ({2})".format(film.country, film.title, film.year));
@@ -131,7 +129,7 @@ $(function () {
         initialiseList(
             "#listCountries",
             _filmsSortedByCountry,
-            function(film) {
+            function (film) {
                 return film.country;
             },
             function (film) {
@@ -154,7 +152,7 @@ $(function () {
     function initialiseList(elementId, array, textFunction, tipFunction) {
         $(elementId).empty();
 
-        array.forEach(function(film){
+        array.forEach(function (film) {
             $("<span></span>")
                 .addClass("listFilm")
                 .prop({
@@ -162,7 +160,7 @@ $(function () {
                     style: "background-color: {0}".format(film.colour)
                 })
                 .text(textFunction(film))
-                .click(function(){
+                .click(function () {
                     showFilmDetails(film.countryCode);
                 })
                 .prepend(
