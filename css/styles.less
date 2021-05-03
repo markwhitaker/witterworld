@@ -10,8 +10,10 @@
 @colour-black: #000000;
 @colour-yellow: #FFB100;
 @colour-light-yellow: #FFEEBA;
-@colour-red: #D1001A;
-@colour-light-red: #FFD6DC;
+@colour-lights-canada-action-red: #D1001A;
+@colour-lights-canada-action-light-red: #FFD6DC;
+@colour-route-50-flicks-light-blue: #E6F6FA;
+@colour-route-50-flicks-blue: #0400B8;
 
 // Font families
 @font-family-default: Raleway, Arial, Helvetica, sans-serif;
@@ -145,24 +147,6 @@ body {
     }
 }
 
-#suggestFilm {
-    background-color: @colour-light-grey;
-    border-radius: @padding-small;
-    padding: @padding-medium @padding-large;
-
-    & > * {
-        display: inline-block;
-        font-size: @font-size-regular;
-        margin: 0;
-    }
-
-    h5 {
-        font-weight: @font-weight-black;
-        text-transform: uppercase;
-        margin-right: @padding-small;
-    }
-}
-
 #buyMerch {
     background-color: @colour-light-yellow;
     border-radius: @padding-medium;
@@ -201,19 +185,32 @@ body {
     }
 }
 
-#route50flicks {
-    background-color: @colour-light-red;
+#route50flicks,
+#lightsCanadaAction {
     border-radius: @padding-medium;
     padding: @padding-large @padding-medium @padding-large (@usa-icon-size + (@padding-medium * 2));
     margin-bottom: @padding-large;
     min-height: @padding-xxxlarge;
-    background-image: url(https://route50flicks.com/images/logo.svg);
     background-size: @usa-icon-size @usa-icon-size;
     background-repeat: no-repeat;
     background-position: @padding-medium;
+}
+
+#route50flicks {
+    background-color: @colour-route-50-flicks-light-blue;
+    background-image: url(https://route50flicks.com/images/logo.svg);
 
     a:hover {
-        color: @colour-red;
+        color: @colour-route-50-flicks-blue;
+    }
+}
+
+#lightsCanadaAction {
+    background-color: @colour-lights-canada-action-light-red;
+    background-image: url(https://canada.witterworld.com/images/logo.svg);
+
+    a:hover {
+        color: @colour-lights-canada-action-red;
     }
 }
 
