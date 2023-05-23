@@ -42,10 +42,9 @@
 @map-height: 600px;
 @section-min-height: 450px;
 @site-icon-size: 120px;
-@tshirt-icon-size: 120px;
 @film-image-width: 200px;
 @film-image-height: 250px;
-@usa-icon-size: 50px;
+@small-icon-size: 50px;
 
 
 // -------------------------------
@@ -147,58 +146,20 @@ body {
     }
 }
 
-#buyMerch {
-    background-color: @colour-light-yellow;
-    border-radius: @padding-medium;
-    position: relative;
-    min-height: @tshirt-icon-size + (@padding-medium * 2);
-    margin-bottom: @padding-large;
-
-    & > * {
-        padding: @padding-medium @padding-large @padding-medium (@tshirt-icon-size + (@padding-medium * 2));
-    }
-
-    h5 {
-        font-size: @font-size-xlarge;
-        font-weight: @font-weight-black;
-        text-transform: uppercase;
-        background-color: @colour-yellow;
-        color: @colour-white;
-        border-radius: @padding-medium @padding-medium 0 0;
-        margin: 0;
-    }
-
-    #tshirtIcon {
-        background-image: url(/images/tshirt.svg);
-        background-repeat: no-repeat;
-        position: absolute;
-        left: @padding-medium;
-        top: @padding-small;
-        height: @tshirt-icon-size;
-        width: @tshirt-icon-size;
-        transform: rotate(-10deg);
-        filter: drop-shadow(10px, 10px, 10px, white);
-    }
-
-    a:hover {
-        color: @colour-yellow;
-    }
-}
-
 #route50flicks,
 #lightsCanadaAction {
     border-radius: @padding-medium;
-    padding: @padding-large @padding-medium @padding-large (@usa-icon-size + (@padding-medium * 2));
+    padding: @padding-large @padding-medium @padding-large (@small-icon-size + (@padding-medium * 2));
     margin-bottom: @padding-large;
     min-height: @padding-xxxlarge;
-    background-size: @usa-icon-size @usa-icon-size;
+    background-size: @small-icon-size @small-icon-size;
     background-repeat: no-repeat;
     background-position: @padding-medium;
 }
 
 #route50flicks {
     background-color: @colour-route-50-flicks-light-blue;
-    background-image: url(https://route50flicks.com/images/logo.svg);
+    background-image: url(/images/route50flicks.svg);
 
     a:hover {
         color: @colour-route-50-flicks-blue;
@@ -207,7 +168,7 @@ body {
 
 #lightsCanadaAction {
     background-color: @colour-lights-canada-action-light-red;
-    background-image: url(https://lights-canada-action.com/images/logo.svg);
+    background-image: url(/images/lights-canada-action.svg);
 
     a:hover {
         color: @colour-lights-canada-action-red;
