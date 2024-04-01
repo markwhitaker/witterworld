@@ -1,7 +1,7 @@
 "use strict";
 
 $(function () {
-    const MAP_BACKGROUND_COLOUR = "#f0f0f0";
+    const MAP_BACKGROUND_COLOUR = "#F0F0F0";
     const INACTIVE_MAP_COLOUR = "#555555";
     const ACTIVE_MAP_COLOURS = [
         "#00C4F0",
@@ -27,7 +27,7 @@ $(function () {
 
     initialiseEventHandlers();
 
-    loadData(function () {
+    loadData(() => {
         initialiseCount();
         initialiseMap();
         initialiseCountriesList();
@@ -39,18 +39,10 @@ $(function () {
     function initialiseEventHandlers() {
         $("a").prop("target", "_blank");
 
-        $("#btnShowMap").click(function () {
-            showMap();
-        });
-        $("#btnShowListCountries").click(function () {
-            showListCountries();
-        });
-        $("#btnShowListFilms").click(function () {
-            showListFilms();
-        });
-        $("#btnShowAbout").click(function () {
-            showAbout();
-        });
+        $("#btnShowMap").click(() => showMap());
+        $("#btnShowListCountries").click(() => showListCountries());
+        $("#btnShowListFilms").click(() => showListFilms());
+        $("#btnShowAbout").click(() => showAbout());
 
         $('#filmCountryFlag').on({
             error: function () {
@@ -67,20 +59,17 @@ $(function () {
         _filmsSortedByTitle = [];
         _films = {};
 
-        $.getJSON("data/films.json", function (filmsArray) {
-            filmsArray.forEach(function (film) {
+        $.getJSON("data/films.json", filmsArray => {
+            filmsArray.forEach(film => {
                 film.colour = getRandomActiveMapColour();
                 _films[film.countryCode] = film;
             });
-            _filmsSortedByCountry = filmsArray.sort(function (a, b) {
-                return (a.country < b.country) ? -1 :
-                    (a.country > b.country) ? 1 : 0;
-            });
-            _filmsSortedByTitle = filmsArray.slice().sort(function (a, b) {
+            _filmsSortedByCountry = filmsArray.sort((a, b) =>
+                (a.country < b.country) ? -1 : (a.country > b.country) ? 1 : 0);
+            _filmsSortedByTitle = filmsArray.slice().sort((a, b) => {
                 let aTitle = a.title.sortable();
                 let bTitle = b.title.sortable();
-                return (aTitle < bTitle) ? -1 :
-                    (aTitle > bTitle) ? 1 : 0;
+                return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
             });
 
             onLoaded();
@@ -103,10 +92,8 @@ $(function () {
                     attribute: "fill"
                 }]
             },
-            onRegionClick: function (_, countryCode) {
-                showFilmDetails(countryCode);
-            },
-            onRegionTipShow: function (_, tip, code) {
+            onRegionClick: (_, countryCode) => showFilmDetails(countryCode),
+            onRegionTipShow: (_, tip, code) => {
                 let film = _films[code];
                 if (film) {
                     tip.text("{0}: {1} ({2})".format(film.country, film.title, film.year));
@@ -129,30 +116,22 @@ $(function () {
         initialiseList(
             "#listCountries",
             _filmsSortedByCountry,
-            function (film) {
-                return film.country;
-            },
-            function (film) {
-                return "{0} ({1})".format(film.title, film.year);
-            });
+            film => film.country,
+            film => "{0} ({1})".format(film.title, film.year));
     }
 
     function initialiseFilmsList() {
         initialiseList(
             "#listFilms",
             _filmsSortedByTitle,
-            function (film) {
-                return "{0} ({1})".format(film.title, film.year);
-            },
-            function (film) {
-                return film.country;
-            });
+            film => "{0} ({1})".format(film.title, film.year),
+            film => film.country);
     }
 
     function initialiseList(elementId, array, textFunction, tipFunction) {
         $(elementId).empty();
 
-        array.forEach(function (film) {
+        array.forEach(film => {
             $("<span></span>")
                 .addClass("listFilm")
                 .prop({
@@ -160,9 +139,7 @@ $(function () {
                     style: "background-color: {0}".format(film.colour)
                 })
                 .text(textFunction(film))
-                .click(function () {
-                    showFilmDetails(film.countryCode);
-                })
+                .click(() => showFilmDetails(film.countryCode))
                 .prepend(
                     $("<img/>").prop({
                         src: URL_FLAG.format(film.countryCode.toLowerCase()),
