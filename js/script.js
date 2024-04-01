@@ -10,15 +10,6 @@ $(function () {
         "#00ABD1",
         "#00A3C7"
     ];
-    const ALT_TEXT_FLAG = "National flag of {0}";
-    const ALT_TEXT_POSTER = "Film poster for {0}";
-    const URL_FLAG = "https://flagcdn.com/{0}.svg";
-    const URL_IMDB = "https://www.imdb.com/title/{0}/";
-    const URL_JUST_WATCH = "https://www.justwatch.com/uk/movie/{0}";
-    const URL_LETTERBOXD = "https://letterboxd.com/film/{0}/";
-    const URL_ROTTEN_TOMATOES = "https://www.rottentomatoes.com/m/{0}";
-    const URL_WIKIPEDIA = "https://en.wikipedia.org/wiki/{0}";
-    const URL_YOUTUBE = "https://www.youtube.com/watch?v={0}";
 
     let _map;
     let _films = {};
@@ -96,7 +87,7 @@ $(function () {
             onRegionTipShow: (_, tip, code) => {
                 let film = _films[code];
                 if (film) {
-                    tip.text("{0}: {1} ({2})".format(film.country, film.title, film.year));
+                    tip.text(`${film.country}: ${film.title} (${film.year})`);
                 }
             }
         });
@@ -117,14 +108,14 @@ $(function () {
             "#listCountries",
             _filmsSortedByCountry,
             film => film.country,
-            film => "{0} ({1})".format(film.title, film.year));
+            film => `${film.title} (${film.year})`);
     }
 
     function initialiseFilmsList() {
         initialiseList(
             "#listFilms",
             _filmsSortedByTitle,
-            film => "{0} ({1})".format(film.title, film.year),
+            film => `${film.title} (${film.year})`,
             film => film.country);
     }
 
@@ -136,14 +127,14 @@ $(function () {
                 .addClass("listFilm")
                 .prop({
                     title: tipFunction(film),
-                    style: "background-color: {0}".format(film.colour)
+                    style: `background-color: ${film.colour}`
                 })
                 .text(textFunction(film))
                 .click(() => showFilmDetails(film.countryCode))
                 .prepend(
                     $("<img/>").prop({
-                        src: URL_FLAG.format(film.countryCode.toLowerCase()),
-                        alt: ALT_TEXT_FLAG.format(film.country)
+                        src: flagUrl(film),
+                        alt: flagAltText(film)
                     })
                 )
                 .appendTo(elementId);
@@ -219,8 +210,8 @@ $(function () {
         $("#filmYear").text(film.year);
         $("#filmCountryFlag")
             .prop({
-                src: URL_FLAG.format(film.countryCode.toLowerCase()),
-                alt: ALT_TEXT_FLAG.format(film.country)
+                src: flagUrl(film),
+                alt: flagAltText(film)
             });
 
         $("#filmImageContainer")
@@ -228,7 +219,7 @@ $(function () {
         $("#filmImage")
             .prop({
                 src: film.image,
-                alt: ALT_TEXT_POSTER.format(film.title)
+                alt: `Film poster for ${film.title} (${film.year})`
             })
             .toggle(!!film.image);
 
@@ -236,34 +227,23 @@ $(function () {
             .text(film.originalTitle)
             .toggle(!!film.originalTitle);
 
-        setupButton("#imdbLink", URL_IMDB, film.imdb);
-        setupButton("#letterboxdLink", URL_LETTERBOXD, film.letterboxd);
-        setupButton("#rottenTomatoesLink", URL_ROTTEN_TOMATOES, film.rottenTomatoes);
-        setupButton("#wikipediaLink", URL_WIKIPEDIA, film.wikipedia);
-        setupButton("#justwatchLink", URL_JUST_WATCH, film.justwatch);
-        setupButton("#trailerLink", URL_YOUTUBE, film.trailer);
-        setupButton("#reviewLink", URL_YOUTUBE, film.review);
-
-        $("#filmReviewer")
-            .text(film.reviewer);
-
+        $("#imdbLink").toggle(!!film.imdb).prop({href: `https://www.imdb.com/title/${film.imdb}/`});
+        $("#letterboxdLink").toggle(!!film.letterboxd).prop({href: `https://letterboxd.com/film/${film.letterboxd}/`});
+        $("#rottenTomatoesLink").toggle(!!film.rottenTomatoes).prop({href: `https://www.rottentomatoes.com/m/${film.rottenTomatoes}`});
+        $("#wikipediaLink").toggle(!!film.wikipedia).prop({href: `https://en.wikipedia.org/wiki/${film.wikipedia}`});
+        $("#justwatchLink").toggle(!!film.justwatch).prop({href: `https://www.justwatch.com/uk/movie/${film.justwatch}`});
+        $("#trailerLink").toggle(!!film.trailer).prop({href: `https://youtu.be/${film.trailer}`});
+        $("#reviewLink").toggle(!!film.review).prop({href: `https://youtu.be/${film.review}`});
+        $("#filmReviewer").text(film.reviewer);
         $("#filmDetailsModal").modal();
     }
 
-    function setupButton(selector, url, value) {
-        $(selector)
-            .prop({
-                href: url.format(value)
-            })
-            .toggle(!!value);
+    function flagUrl(film) {
+        return `https://flagcdn.com/${film.countryCode.toLowerCase()}.svg`;
     }
 
-    String.prototype.format = function () {
-        let formatted = this;
-        for (let i = 0; i < arguments.length; i++) {
-            formatted = formatted.replace("{" + i + "}", arguments[i]);
-        }
-        return formatted;
+    function flagAltText(film) {
+        return `National flag of ${film.country}`;
     }
 
     String.prototype.sortable = function () {
