@@ -38,3 +38,7 @@ Films JSON contains objects with properties: `countryCode`, `country`, `title`, 
 ## Deployment
 
 Hosted on Netlify with configuration in `netlify.toml` that handles CSS/JS bundling and minification during deployment.
+
+## CSS Guidelines
+
+- Never use !important in CSS
