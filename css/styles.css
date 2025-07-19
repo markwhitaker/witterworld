@@ -1,1 +1,305 @@
-body{font-family:Raleway,Arial,Helvetica,sans-serif;font-size:12pt}.section{background-color:#f0f0f0;min-height:450px}#map{height:600px}.listIntroduction{font-size:10pt;margin-top:20px;margin-bottom:20px}.list .listFilm{display:inline-block;border-radius:5px;cursor:pointer;background-color:#00B3DB;color:#ffffff;padding:5px 10px;margin:0 10px 10px 0}.list .listFilm:hover{opacity:80%}.list .listFilm img{height:1em;padding-right:5px}#about{padding:20px 0}#about .listen{font-size:10pt}#filmCount{display:inline-block;font-weight:700;border-radius:5px;background-color:#00B3DB;color:#ffffff;padding:0 5px}.icon{width:30px}.masthead{padding-top:30px;padding-bottom:30px}.masthead h1{font-size:30pt;font-weight:900;text-transform:uppercase}.masthead h4{font-size:18pt;font-weight:400}.masthead #icon{background-image:url(/images/icon.svg);background-repeat:no-repeat;display:inline-block;height:120px;width:120px}.content a{color:#000000;text-decoration:underline}.content a:hover{color:#00B3DB}#route50flicks,#lightsCanadaAction{border-radius:10px;padding:20px 10px 20px 70px;margin-bottom:20px;min-height:50px;background-size:50px 50px;background-repeat:no-repeat;background-position:10px}#route50flicks{background-color:#E6F6FA;background-image:url(/images/route50flicks.svg)}#route50flicks a:hover{color:#0400B8}#lightsCanadaAction{background-color:#FFD6DC;background-image:url(/images/lights-canada-action.svg)}#lightsCanadaAction a:hover{color:#D1001A}#topContent{margin-bottom:30px}#filmImageContainer{display:inline-block;border:5px solid #f0f0f0;border-radius:5px;margin:0 5px 10px 0}#filmImageContainer.defaultImage{width:200px;height:250px;background-image:url(/images/default-image.svg)}#filmImage{max-width:200px}#filmCountryFlag{height:30px;margin-right:10px;border:2px solid #ffffffaa;border-radius:2px}#filmTitleContainer{margin-bottom:30px}#filmTitleAndYear,#filmTitle,#filmOriginalTitle,#filmYear{margin-bottom:0}#filmTitleAndYear #filmTitle{font-size:30pt;font-weight:900;line-height:1em}#filmTitleAndYear small{font-size:12pt;font-weight:400}#filmOriginalTitle{font-family:Raleway,Tajawal,Arial,Helvetica,sans-serif;font-weight:400;font-size:12pt;color:#909090;line-height:1em;margin-top:.5em}.modal-header{background-color:#00B3DB;color:#ffffff}.modal-header h4{font-size:20pt;font-weight:400}.modal-header button.close{font-weight:400;font-size:24pt;text-shadow:none;opacity:1;color:#ffffff}.modal-body{padding-bottom:20px}.filmLinks .btn{display:inline-block;margin:0 5px 10px 0;padding:10px 10px 10px 50px;background-position:center left 10px;background-repeat:no-repeat;background-size:30px}#trailerLink{background-image:url(/images/trailer.svg)}#reviewLink{background-image:url(/images/review.svg)}#letterboxdLink{background-image:url(/images/letterboxd.svg)}#imdbLink{background-image:url(/images/imdb.svg)}#rottenTomatoesLink{background-image:url(/images/rotten-tomatoes.svg)}#wikipediaLink{background-image:url(/images/wikipedia.svg)}#justwatchLink{background-image:url(/images/justwatch.svg)}#footer{padding-top:10px;padding-bottom:30px;font-size:10pt}#footer p{margin-bottom:0}#sectionTabs button{border-width:2px 2px 0 2px;border-style:solid;border-radius:5px 5px 0 0;padding:5px 10px;margin-right:5px;background-color:#ffffff;border-color:#f0f0f0}#sectionTabs button.selected{background-color:#f0f0f0}#sectionTabs #btnShowAbout{float:right}#timelineContainer{background-color:#ffffff;border-bottom:2px solid #f0f0f0;padding:20px 0}#timelineSlider{padding:0 10px}#timelineTrack{position:relative;height:6px;background-color:#f0f0f0;border-radius:3px;margin:10px 0;cursor:pointer}#timelineProgress{position:absolute;top:0;left:0;height:100%;background-color:#00B3DB;border-radius:3px;width:100%;transition:width .3s ease}#timelineHandle{position:absolute;top:50%;transform:translate(-50%, -50%);width:20px;height:20px;background-color:#00B3DB;border:3px solid #ffffff;border-radius:50%;cursor:grab;left:100%;transition:left .3s ease;box-shadow:0 2px 6px rgba(0,0,0,0.2)}#timelineHandle:hover{transform:translate(-50%, -50%) scale(1.1)}#timelineHandle:active{cursor:grabbing;transform:translate(-50%, -50%) scale(.95)}#timelineDots{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}#timelineDots .timeline-dot{position:absolute;top:50%;transform:translate(-50%, -50%);width:12px;height:12px;background-color:#909090;border:2px solid #ffffff;border-radius:50%;cursor:pointer;pointer-events:all;transition:all .2s ease}#timelineDots .timeline-dot:hover{background-color:#00B3DB;transform:translate(-50%, -50%) scale(1.2)}#timelineDots .timeline-dot.active{background-color:#00B3DB;transform:translate(-50%, -50%) scale(1.3)}#timelineInfo{text-align:center;font-size:10pt;color:#909090;margin-top:5px}#timelineInfo #timelineCountryCount{font-weight:700;color:#00B3DB}
+body {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+.section {
+  background-color: #f0f0f0;
+  min-height: 450px;
+}
+#map {
+  height: 600px;
+}
+.listIntroduction {
+  font-size: 10pt;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.list .listFilm {
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #00B3DB;
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 0 10px 10px 0;
+}
+.list .listFilm:hover {
+  opacity: 80%;
+}
+.list .listFilm img {
+  height: 1em;
+  padding-right: 5px;
+}
+#about {
+  padding: 20px 0;
+}
+#about .listen {
+  font-size: 10pt;
+}
+#filmCount {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: #00B3DB;
+  color: #ffffff;
+  padding: 0 5px;
+}
+.icon {
+  width: 30px;
+}
+.masthead {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.masthead h1 {
+  font-size: 30pt;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.masthead h4 {
+  font-size: 18pt;
+  font-weight: 400;
+}
+.masthead #icon {
+  background-image: url(/images/icon.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+}
+.content a {
+  color: #000000;
+  text-decoration: underline;
+}
+.content a:hover {
+  color: #00B3DB;
+}
+#route50flicks,
+#lightsCanadaAction {
+  border-radius: 10px;
+  padding: 20px 10px 20px 70px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+#route50flicks {
+  background-color: #E6F6FA;
+  background-image: url(/images/route50flicks.svg);
+}
+#route50flicks a:hover {
+  color: #0400B8;
+}
+#lightsCanadaAction {
+  background-color: #FFD6DC;
+  background-image: url(/images/lights-canada-action.svg);
+}
+#lightsCanadaAction a:hover {
+  color: #D1001A;
+}
+#topContent {
+  margin-bottom: 30px;
+}
+#filmImageContainer {
+  display: inline-block;
+  border: 5px solid #f0f0f0;
+  border-radius: 5px;
+  margin: 0 5px 10px 0;
+}
+#filmImageContainer.defaultImage {
+  width: 200px;
+  height: 250px;
+  background-image: url(/images/default-image.svg);
+}
+#filmImage {
+  max-width: 200px;
+}
+#filmCountryFlag {
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid #ffffffaa;
+  border-radius: 2px;
+}
+#filmTitleContainer {
+  margin-bottom: 30px;
+}
+#filmTitleAndYear,
+#filmTitle,
+#filmOriginalTitle,
+#filmYear {
+  margin-bottom: 0;
+}
+#filmTitleAndYear #filmTitle {
+  font-size: 30pt;
+  font-weight: 900;
+  line-height: 1em;
+}
+#filmTitleAndYear small {
+  font-size: 12pt;
+  font-weight: 400;
+}
+#filmOriginalTitle {
+  font-family: Raleway, Tajawal, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 12pt;
+  color: #909090;
+  line-height: 1em;
+  margin-top: 0.5em;
+}
+.modal-header {
+  background-color: #00B3DB;
+  color: #ffffff;
+}
+.modal-header h4 {
+  font-size: 20pt;
+  font-weight: 400;
+}
+.modal-header button.close {
+  font-weight: 400;
+  font-size: 24pt;
+  text-shadow: none;
+  opacity: 1;
+  color: #ffffff;
+}
+.modal-body {
+  padding-bottom: 20px;
+}
+.filmLinks .btn {
+  display: inline-block;
+  margin: 0 5px 10px 0;
+  padding: 10px 10px 10px 50px;
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+}
+#trailerLink {
+  background-image: url(/images/trailer.svg);
+}
+#reviewLink {
+  background-image: url(/images/review.svg);
+}
+#letterboxdLink {
+  background-image: url(/images/letterboxd.svg);
+}
+#imdbLink {
+  background-image: url(/images/imdb.svg);
+}
+#rottenTomatoesLink {
+  background-image: url(/images/rotten-tomatoes.svg);
+}
+#wikipediaLink {
+  background-image: url(/images/wikipedia.svg);
+}
+#justwatchLink {
+  background-image: url(/images/justwatch.svg);
+}
+#footer {
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-size: 10pt;
+}
+#footer p {
+  margin-bottom: 0;
+}
+#sectionTabs button {
+  border-width: 2px 2px 0 2px;
+  border-style: solid;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #ffffff;
+  border-color: #f0f0f0;
+}
+#sectionTabs button.selected {
+  background-color: #f0f0f0;
+}
+#sectionTabs #btnShowAbout {
+  float: right;
+}
+#timelineContainer {
+  background-color: #ffffff;
+  border-bottom: 2px solid #f0f0f0;
+  padding: 20px 0;
+}
+#timelineSlider {
+  padding: 0 10px;
+}
+#timelineTrack {
+  position: relative;
+  height: 6px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+#timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #00B3DB;
+  border-radius: 3px;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+#timelineHandle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #00B3DB;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  cursor: grab;
+  left: 100%;
+  transition: left 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+#timelineHandle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+#timelineHandle:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+#timelineDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#timelineDots .timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #909090;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.2s ease;
+}
+#timelineDots .timeline-dot:hover {
+  background-color: #00B3DB;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+#timelineDots .timeline-dot.active {
+  background-color: #00B3DB;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+#timelineInfo {
+  text-align: center;
+  font-size: 10pt;
+  color: #909090;
+  margin-top: 5px;
+}
+#timelineInfo #timelineCountryCount {
+  font-weight: 700;
+  color: #00B3DB;
+}
