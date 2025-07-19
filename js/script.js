@@ -303,27 +303,65 @@ $(function () {
         // Initialize handle position
         updateTimelinePosition(_currentTimelineIndex);
 
-        // Handle dragging
+        // Enhanced dragging functionality
         let isDragging = false;
-        $handle.on("mousedown", (e) => {
-            isDragging = true;
-            e.preventDefault();
-        });
-
-        $(document).on("mousemove", (e) => {
-            if (!isDragging) return;
-            
+        
+        function getPositionFromEvent(e) {
             const trackRect = $track[0].getBoundingClientRect();
-            const relativeX = Math.max(0, Math.min(1, (e.clientX - trackRect.left) / trackRect.width));
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            return Math.max(0, Math.min(1, (clientX - trackRect.left) / trackRect.width));
+        }
+        
+        function updateFromPosition(relativeX) {
             const newIndex = Math.round(relativeX * (_timelineCheckpoints.length - 1));
-            
             if (newIndex !== _currentTimelineIndex) {
                 updateTimelinePosition(newIndex);
             }
+        }
+        
+        // Handle dragging - only from the handle
+        $handle.on("mousedown", (e) => {
+            isDragging = true;
+            $handle.addClass("dragging");
+            e.preventDefault();
         });
-
-        $(document).on("mouseup", () => {
-            isDragging = false;
+        
+        // Handle dragging - touch events (mobile support)
+        $handle.on("touchstart", (e) => {
+            isDragging = true;
+            $handle.addClass("dragging");
+            e.preventDefault();
+        });
+        
+        // Track clicking to jump to position (not dragging)
+        $track.on("click", (e) => {
+            if (!isDragging) {
+                const relativeX = getPositionFromEvent(e);
+                updateFromPosition(relativeX);
+            }
+        });
+        
+        // Mouse move events
+        $(document).on("mousemove", (e) => {
+            if (!isDragging) return;
+            const relativeX = getPositionFromEvent(e);
+            updateFromPosition(relativeX);
+        });
+        
+        // Touch move events
+        $(document).on("touchmove", (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const relativeX = getPositionFromEvent(e);
+            updateFromPosition(relativeX);
+        });
+        
+        // Mouse and touch end events
+        $(document).on("mouseup touchend", () => {
+            if (isDragging) {
+                isDragging = false;
+                $handle.removeClass("dragging");
+            }
         });
     }
 

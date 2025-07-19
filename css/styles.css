@@ -233,15 +233,25 @@ body {
   margin: 10px 0;
   cursor: pointer;
 }
+#timelineTrack::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
 #timelineProgress {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 6px;
   background-color: #00B3DB;
   border-radius: 3px;
   width: 100%;
   transition: width 0.3s ease;
+  pointer-events: none;
 }
 #timelineHandle {
   position: absolute;
@@ -260,7 +270,8 @@ body {
 #timelineHandle:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
-#timelineHandle:active {
+#timelineHandle:active,
+#timelineHandle.dragging {
   cursor: grabbing;
   transform: translate(-50%, -50%) scale(0.95);
 }

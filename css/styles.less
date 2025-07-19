@@ -342,18 +342,30 @@ body {
     background-color: @colour-light-grey;
     border-radius: 3px;
     margin: @padding-medium 0;
-    cursor: pointer;
+    cursor: pointer; // Pointing finger for clicking to jump
+    
+    // Create larger click area with pseudo-element
+    &::before {
+        content: '';
+        position: absolute;
+        top: -@padding-medium;
+        bottom: -@padding-medium;
+        left: 0;
+        right: 0;
+        cursor: pointer; // Pointing finger on extended click area
+    }
 }
 
 #timelineProgress {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 6px; // Match track height exactly
     background-color: @colour-blue;
     border-radius: 3px;
     width: 100%;
     transition: width 0.3s ease;
+    pointer-events: none; // Don't interfere with track clicks
 }
 
 #timelineHandle {
@@ -365,7 +377,7 @@ body {
     background-color: @colour-blue;
     border: 3px solid @colour-white;
     border-radius: 50%;
-    cursor: grab;
+    cursor: grab; // Grab cursor for dragging
     left: 100%;
     transition: left 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -374,7 +386,7 @@ body {
         transform: translate(-50%, -50%) scale(1.1);
     }
 
-    &:active {
+    &:active, &.dragging {
         cursor: grabbing;
         transform: translate(-50%, -50%) scale(0.95);
     }
