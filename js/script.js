@@ -15,11 +15,29 @@ $(function () {
     let _films = {};
     let _filmsSortedByCountry = [];
     let _filmsSortedByTitle = [];
+    let _currentTimelineIndex = 11; // Default to showing all films (last checkpoint)
+    
+    // Timeline checkpoints based on Git history analysis
+    const _timelineCheckpoints = [
+        { count: 2, countries: ["CH", "IS"] },
+        { count: 3, countries: ["CH", "IS", "RO"] },
+        { count: 6, countries: ["CH", "IS", "RO", "IT", "PL", "IQ"] },
+        { count: 7, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT"] },
+        { count: 10, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT"] },
+        { count: 16, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG"] },
+        { count: 21, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG", "AU", "BM", "CN", "DE", "MX"] },
+        { count: 27, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG", "AU", "BM", "CN", "DE", "MX", "AR", "CZ", "JM", "NG", "NO", "GB-WLS"] },
+        { count: 30, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG", "AU", "BM", "CN", "DE", "MX", "AR", "CZ", "JM", "NG", "NO", "GB-WLS", "KP", "BT", "FI"] },
+        { count: 34, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG", "AU", "BM", "CN", "DE", "MX", "AR", "CZ", "JM", "NG", "NO", "GB-WLS", "KP", "BT", "FI", "PT", "MN", "LB", "ZA"] },
+        { count: 46, countries: ["CH", "IS", "RO", "IT", "PL", "IQ", "MT", "DK", "TR", "AT", "AS", "CA", "GB-SCT", "SE", "VE", "PG", "AU", "BM", "CN", "DE", "MX", "AR", "CZ", "JM", "NG", "NO", "GB-WLS", "KP", "BT", "FI", "PT", "MN", "LB", "ZA", "HU", "GE", "GT", "IE", "ES", "GR", "CL", "NL", "TW", "IN"] },
+        { count: 52, countries: null } // null means show all films
+    ];
 
     initialiseEventHandlers();
 
     loadData(() => {
         initialiseCount();
+        initialiseTimeline();
         initialiseMap();
         initialiseCountriesList();
         initialiseFilmsList();
@@ -85,7 +103,8 @@ $(function () {
             },
             onRegionClick: (_, countryCode) => showFilmDetails(countryCode),
             onRegionTipShow: (_, tip, code) => {
-                let film = _films[code];
+                const filteredFilms = getFilteredFilmsObject();
+                let film = filteredFilms[code];
                 if (film) {
                     tip.text(`${film.country}: ${film.title} (${film.year})`);
                 }
@@ -104,17 +123,28 @@ $(function () {
     }
 
     function initialiseCountriesList() {
+        const filteredFilms = getFilteredFilms();
+        const sortedByCountry = filteredFilms.sort((a, b) =>
+            (a.country < b.country) ? -1 : (a.country > b.country) ? 1 : 0);
+        
         initialiseList(
             "#listCountries",
-            _filmsSortedByCountry,
+            sortedByCountry,
             film => film.country,
             film => `${film.title} (${film.year})`);
     }
 
     function initialiseFilmsList() {
+        const filteredFilms = getFilteredFilms();
+        const sortedByTitle = filteredFilms.sort((a, b) => {
+            let aTitle = a.title.sortable();
+            let bTitle = b.title.sortable();
+            return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
+        });
+        
         initialiseList(
             "#listFilms",
-            _filmsSortedByTitle,
+            sortedByTitle,
             film => `${film.title} (${film.year})`,
             film => film.country);
     }
@@ -142,7 +172,8 @@ $(function () {
     }
 
     function initialiseCount() {
-        $("#filmCount").text(_filmsSortedByCountry.length);
+        const filteredFilms = getFilteredFilms();
+        $("#filmCount").text(filteredFilms.length);
     }
 
     function showMap() {
@@ -184,10 +215,11 @@ $(function () {
     }
 
     function getMapColours() {
+        const filteredFilms = getFilteredFilmsObject();
         let colours = {};
         for (let region in _map.regions) {
-            colours[region] = _films[region]
-                ? _films[region].colour
+            colours[region] = filteredFilms[region]
+                ? filteredFilms[region].colour
                 : INACTIVE_MAP_COLOUR;
         }
         return colours;
@@ -199,7 +231,8 @@ $(function () {
     }
 
     function showFilmDetails(countryCode) {
-        let film = _films[countryCode];
+        const filteredFilms = getFilteredFilmsObject();
+        let film = filteredFilms[countryCode];
 
         if (!film) {
             return;
@@ -248,5 +281,112 @@ $(function () {
 
     String.prototype.sortable = function () {
         return this.replace(/^(A|The) /, "");
+    }
+
+    function initialiseTimeline() {
+        const $track = $("#timelineTrack");
+        const $dots = $("#timelineDots");
+        const $handle = $("#timelineHandle");
+        const $progress = $("#timelineProgress");
+
+        // Create dots for each checkpoint
+        $dots.empty();
+        _timelineCheckpoints.forEach((checkpoint, index) => {
+            const $dot = $("<div></div>")
+                .addClass("timeline-dot")
+                .attr("data-index", index)
+                .css("left", `${(index / (_timelineCheckpoints.length - 1)) * 100}%`)
+                .click(() => updateTimelinePosition(index));
+            $dots.append($dot);
+        });
+
+        // Initialize handle position
+        updateTimelinePosition(_currentTimelineIndex);
+
+        // Handle dragging
+        let isDragging = false;
+        $handle.on("mousedown", (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+
+        $(document).on("mousemove", (e) => {
+            if (!isDragging) return;
+            
+            const trackRect = $track[0].getBoundingClientRect();
+            const relativeX = Math.max(0, Math.min(1, (e.clientX - trackRect.left) / trackRect.width));
+            const newIndex = Math.round(relativeX * (_timelineCheckpoints.length - 1));
+            
+            if (newIndex !== _currentTimelineIndex) {
+                updateTimelinePosition(newIndex);
+            }
+        });
+
+        $(document).on("mouseup", () => {
+            isDragging = false;
+        });
+    }
+
+    function updateTimelinePosition(index) {
+        _currentTimelineIndex = index;
+        const percentage = (index / (_timelineCheckpoints.length - 1)) * 100;
+        
+        $("#timelineHandle").css("left", `${percentage}%`);
+        $("#timelineProgress").css("width", `${percentage}%`);
+        
+        // Update dots
+        $(".timeline-dot").removeClass("active");
+        $(`.timeline-dot[data-index="${index}"]`).addClass("active");
+        
+        // Update country count
+        const checkpoint = _timelineCheckpoints[index];
+        $("#timelineCountryCount").text(checkpoint.count);
+        
+        // Refresh all views
+        refreshViewsForTimeline();
+    }
+
+    function refreshViewsForTimeline() {
+        initialiseCount();
+        
+        if (_map) {
+            uninitialiseMap();
+            initialiseMap();
+        }
+        
+        initialiseCountriesList();
+        initialiseFilmsList();
+    }
+
+    function getFilteredFilms() {
+        const checkpoint = _timelineCheckpoints[_currentTimelineIndex];
+        
+        if (!checkpoint.countries) {
+            // Show all films
+            return Object.values(_films);
+        }
+        
+        // Filter films based on allowed countries for this checkpoint
+        return Object.values(_films).filter(film => 
+            checkpoint.countries.includes(film.countryCode)
+        );
+    }
+
+    function getFilteredFilmsObject() {
+        const checkpoint = _timelineCheckpoints[_currentTimelineIndex];
+        
+        if (!checkpoint.countries) {
+            // Show all films
+            return _films;
+        }
+        
+        // Create filtered films object
+        const filtered = {};
+        checkpoint.countries.forEach(countryCode => {
+            if (_films[countryCode]) {
+                filtered[countryCode] = _films[countryCode];
+            }
+        });
+        return filtered;
     }
 });
