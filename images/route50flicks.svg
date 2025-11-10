@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 101 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-933,-2)">
-        <g transform="matrix(1,0,0,1,487.586,2.59828)">
-            <rect id="route50flicks" x="446" y="0" width="100" height="100" style="fill:none;"/>
-            <g id="route50flicks1" serif:id="route50flicks">
+<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-910,0)">
+        <g id="route50flicks" transform="matrix(1,0,0,1,464,-1.56319e-13)">
+            <rect x="446" y="0" width="100" height="100" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="446" y="0" width="100" height="100"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
                 <g transform="matrix(1,0,0,1,409.645,428.002)">
                     <g transform="matrix(0.104602,0,0,0.104602,24.5878,-442.123)">
                         <path d="M590.5,1091C590.5,1091 573.845,1091.16 560,1076C529.05,1042.12 483.716,1031.05 413,1023C333.089,1013.9 264.388,1001.72 206,945C174.985,914.873 133.075,855.136 133,758C132.9,627.87 214.001,570.558 216,479C217.43,413.483 163.983,333.583 159,327C154.017,320.417 151.015,317.795 152,308C152.985,298.205 161,290 161,290C161,290 302.506,154.336 309,147C315.494,139.664 321.038,134.985 330,135C342.005,135.02 340.859,136.122 352,144C362.717,151.579 410.331,182.074 470,180C511.339,178.563 537.713,172.578 563.626,154.072C581.124,141.575 590.5,141 590.5,141C590.5,141 600.97,142.356 617.374,154.072C643.287,172.578 669.661,178.563 711,180C770.669,182.074 818.283,151.579 829,144C840.141,136.122 838.995,135.02 851,135C859.962,134.985 865.506,139.664 872,147C878.494,154.336 1020,290 1020,290C1020,290 1028.02,298.205 1029,308C1029.99,317.795 1026.98,320.417 1022,327C1017.02,333.583 963.57,413.483 965,479C966.999,570.558 1048.1,627.87 1048,758C1047.92,855.136 1006.01,914.873 975,945C916.612,1001.72 847.911,1013.9 768,1023C697.284,1031.05 651.95,1042.12 621,1076C606.709,1091.64 590.5,1091 590.5,1091Z" style="fill:rgb(89,89,89);"/>
