@@ -11,6 +11,7 @@ $(function () {
         "#00A3C7"
     ];
 
+
     let _map;
     let _films = {};
     let _filmsSortedByCountry = [];
@@ -58,8 +59,8 @@ $(function () {
             _filmsSortedByCountry = filmsArray.sort((a, b) =>
                 (a.country < b.country) ? -1 : (a.country > b.country) ? 1 : 0);
             _filmsSortedByTitle = filmsArray.slice().sort((a, b) => {
-                let aTitle = a.title.sortable();
-                let bTitle = b.title.sortable();
+                const aTitle = a.title.sortable();
+                const bTitle = b.title.sortable();
                 return (aTitle < bTitle) ? -1 : (aTitle > bTitle) ? 1 : 0;
             });
 
@@ -85,7 +86,7 @@ $(function () {
             },
             onRegionClick: (_, countryCode) => showFilmDetails(countryCode),
             onRegionTipShow: (_, tip, code) => {
-                let film = _films[code];
+                const film = _films[code];
                 if (film) {
                     tip.text(`${film.country}: ${film.title} (${film.year})`);
                 }
@@ -184,8 +185,8 @@ $(function () {
     }
 
     function getMapColours() {
-        let colours = {};
-        for (let region in _map.regions) {
+        const colours = {};
+        for (const region in _map.regions) {
             colours[region] = _films[region]
                 ? _films[region].colour
                 : INACTIVE_MAP_COLOUR;
@@ -194,12 +195,12 @@ $(function () {
     }
 
     function getRandomActiveMapColour() {
-        let index = Math.floor(Math.random() * ACTIVE_MAP_COLOURS.length);
+        const index = Math.floor(Math.random() * ACTIVE_MAP_COLOURS.length);
         return ACTIVE_MAP_COLOURS[index];
     }
 
     function showFilmDetails(countryCode) {
-        let film = _films[countryCode];
+        const film = _films[countryCode];
 
         if (!film) {
             return;
