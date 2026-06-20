@@ -236,7 +236,7 @@ $(function () {
         $("#trailerLink").toggle(!!film.trailer).prop({href: `https://youtu.be/${film.trailer}`});
         $("#reviewLink").toggle(!!film.review).prop({href: `https://youtu.be/${film.review}`});
         $("#filmReviewer").text(film.reviewer);
-        $("#filmDetailsModal").modal();
+        new bootstrap.Modal("#filmDetailsModal").show();
     }
 
     function flagUrl(film) {
