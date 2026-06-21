@@ -24,6 +24,7 @@ $(function () {
         initialiseMap();
         initialiseCountriesList();
         initialiseFilmsList();
+        preloadImages();
     });
 
     //-----------------------------------------------------------
@@ -118,6 +119,20 @@ $(function () {
             _filmsSortedByTitle,
             film => `${film.title} (${film.year})`,
             film => film.country);
+    }
+
+    async function preloadImages() {
+        await Promise.all(
+            _filmsSortedByTitle.map((film) => {
+                return new Promise(() => {
+                    const img = new Image();
+                    img.onerror = () => {
+                        console.warn(`Failed to load image for ${film.title}: ${film.image}`);
+                    };
+                    img.src = film.image;
+                });
+            })
+        );
     }
 
     function initialiseList(elementId, array, textFunction, tipFunction) {
